@@ -15,7 +15,7 @@ const ExperienceSection = () => {
         "Deployed scalable ML pipelines via Vertex AI on GCP"
       ],
       tech: ["LangChain", "BigQuery", "Vertex AI", "GCP"],
-      logo: "public/lovable-uploads/1691082323255.jpeg",
+      logo: "/lovable-uploads/1691082323255.jpeg",
       current: true
     },
     {
@@ -28,7 +28,7 @@ const ExperienceSection = () => {
         "Automated multimedia redaction pipeline with Aspose + MTCNN"
       ],
       tech: ["PaddleOCR", "Aspose", "MTCNN", "Python"],
-      logo: "public/lovable-uploads/vidizmo-logo-png_seeklogo-428353.png"
+      logo: "/lovable-uploads/vidizmo-logo-png_seeklogo-428353.png"
     },
     {
       id: 3,
@@ -41,7 +41,7 @@ const ExperienceSection = () => {
         "Enhanced dynamic fit accuracy for virtual clothing experiences"
       ],
       tech: ["MediaPipe", "ARCore", "Unity", "OneEuro"],
-      logo: "public/lovable-uploads/systems_limited_logo.jpeg"
+      logo: "/lovable-uploads/systems_limited_logo.jpeg"
     },
     {
       id: 4,
@@ -54,7 +54,7 @@ const ExperienceSection = () => {
         "Implemented data visualization dashboards for monitoring"
       ],
       tech: ["OpenCV", "Python", "Data Analysis"],
-      logo: "public/lovable-uploads/pso-logo.png"
+      logo: "/lovable-uploads/pso-logo.png"
     }
   ];
 
