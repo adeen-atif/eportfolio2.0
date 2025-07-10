@@ -3,12 +3,12 @@ import React from 'react';
 
 const AboutSection = () => {
   const stats = [
-    { number: '5,000+', label: 'Students Taught' },
+    { number: '2,000+', label: 'Students Taught' },
     { number: '8+', label: 'Org Affiliations' },
-    { number: '100+', label: 'Events Led' },
-    { number: '7', label: 'AI Projects Shipped' },
+    { number: '25+', label: 'Events Led' },
+    { number: '19', label: 'AI Projects Shipped' },
     { number: '98%', label: 'Model Accuracy' },
-    { number: '3 yrs', label: 'AI Experience' }
+    { number: '2 yrs', label: 'AI Experience' }
   ];
 
   return (
