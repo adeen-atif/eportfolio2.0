@@ -220,8 +220,8 @@ const HeroSection = () => {
           onClick={scrollToNextSection}
           className="flex flex-col items-center text-gray-600 hover:text-black transition-colors duration-300 group"
         >
-{/*           <span className="text-xs md:text-sm font-mono mb-1 md:mb-2 opacity-70 group-hover:opacity-100 transition-opacity">Scroll down</span>
-          <ChevronDown className="w-5 h-5 md:w-6 md:h-6 animate-bounce" /> */}
+{/*           <span className="text-xs md:text-sm font-mono mb-1 md:mb-2 opacity-70 group-hover:opacity-100 transition-opacity">Scroll down</span> */}
+          <ChevronDown className="w-5 h-5 md:w-6 md:h-6 animate-bounce" /> 
         </button>
       </div>
     </section>
