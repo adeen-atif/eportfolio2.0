@@ -15,15 +15,15 @@ const LeadershipSection = () => {
       title: "CO-FOUNDER ARCANUM", 
       desc: "Started a booming ed-tech company aiming to aid students and working professionals.",
       year: "2025",
-      logo: "public/lovable-uploads/Final Final Logo.png",
-      photo: "public/lovable-uploads/AA.png"
+      logo: "/lovable-uploads/Final Final Logo.png",
+      photo: "/lovable-uploads/AA.png"
     },
     { 
       title: "TEDX CLIFTON", 
       desc: "Curated and led speaker storytelling for TEDx talks.",
       year: "2023",
       logo: "/lovable-uploads/9de938c3-30fc-4c53-b837-1bcdc296cd68.png",
-      photo: "public/lovable-uploads/489757877_1072519284895790_2402514148411438511_n.jpg"
+      photo: "/lovable-uploads/489757877_1072519284895790_2402514148411438511_n.jpg"
     },
     { 
       title: "WWF PAKISTAN", 
@@ -37,13 +37,13 @@ const LeadershipSection = () => {
       desc: "Mentored and judged national-level robotics talent.",
       year: "2023",
       logo: "/lovable-uploads/81bcdf6c-9127-4176-9c62-a8c6a6328f22.png",
-      photo: "public/lovable-uploads/1692709757999.jpeg"
+      photo: "/lovable-uploads/1692709757999.jpeg"
     },
     { 
       title: "BADMINTON TEAM CAPTAIN", 
       desc: "Led IBA's badminton team to multiple victories and championships.",
       year: "2022-24",
-      logo: "public/lovable-uploads/images (4).png",
+      logo: "/lovable-uploads/images (4).png",
       photo: "/lovable-uploads/3ea90759-19d7-4ee3-9bc6-7cea80503e4e.png"
     }
   ];
