@@ -25,42 +25,42 @@ const HeroSection = () => {
     { 
       filename: "Adeen.png", 
       image: "/lovable-uploads/56516795-45b4-42d5-bd70-cd85a5054fd6.png", 
-      url: "https://adeen-portfolio.com"
+      url: "https://www.adeenatif.com"
     },
     { 
       filename: "AIEngineer.png", 
       image: "/lovable-uploads/9cab72cb-c1cb-46c8-a2c8-922335e42fdd.png", 
-      url: "https://ai-projects.com"
+      url: "https://www.adeenatif.com"
     },
     { 
       filename: "StartupFounder.png", 
       image: "/lovable-uploads/185e2400-c697-410a-99ad-5e76b5c71965.png", 
-      url: "https://startup-journey.com"
+      url: "https://thearcanumacademy.com"
     },
     { 
       filename: "GoogleDSCLead.png", 
       image: "/lovable-uploads/a647577a-89cd-4b0b-b540-deb8be57fefb.png", 
-      url: "https://google-dsc.com"
+      url: "https://www.instagram.com/p/CyDnbIaoMA2/"
     },
     { 
       filename: "BadmintonCaptain.png", 
       image: "/lovable-uploads/fe57845d-d390-4dff-b90f-63e7caeeb6d8.png", 
-      url: "https://badminton-achievements.com"
+      url: "https://www.facebook.com/IBASPACE/posts/pfbid032GspW4kAARWhxZJ4cvwaXc95Qu9Zy659fDWJgK4YdQoXRASYeD1snEZ8zEtkGB2al"
     },
     { 
       filename: "MarathonRunner.png", 
       image: "/lovable-uploads/14dcadd0-e1ec-4ae0-98ea-3a0eb600efcb.png", 
-      url: "https://marathon-runs.com"
+      url: "https://www.linkedin.com/posts/adeen-atif_ran-a-5k-at-the-exact-same-time-as-250000-activity-7351913658362294273--FjW?utm_source=share&utm_medium=member_desktop&rcm=ACoAADKh8mQBpH955rMTC_IlmL1WPoUihyDrQ08"
     },
     { 
       filename: "CatLover.png", 
       image: "/lovable-uploads/b32baa7e-3c31-4134-8765-90101b850a75.png", 
-      url: "https://cat-stories.com"
+      url: "https://www.adeenatif.com"
     },
     { 
       filename: "Cyclist.png", 
       image: "/lovable-uploads/Cyclist.png", 
-      url: "https://cycling-adventures.com"
+      url: "https://www.adeenatif.com"
     }
   ];
 
