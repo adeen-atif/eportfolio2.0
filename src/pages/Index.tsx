@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import HeroSection from '@/components/HeroSection';
 import QuickLinksSection from '@/components/QuickLinksSection';
 import AboutSection from '@/components/AboutSection';
@@ -29,6 +30,12 @@ const Index = () => {
                 {item}
               </button>
             ))}
+            <Link
+              to="/blog"
+              className="text-black hover:underline font-bold text-xs md:text-sm px-1 py-1"
+            >
+              Blog
+            </Link>
           </div>
         </div>
       </nav>
