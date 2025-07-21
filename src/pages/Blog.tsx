@@ -249,69 +249,6 @@ The mnemonic inspiration came from this [cool and elaborate video](https://www.y
 Would love to hear which pattern you're most excited to build with.`,
     tags: ["AI", "Agentic Systems", "Design Patterns", "Machine Learning"]
   },
-  {
-    id: 2,
-    title: "The Future of Fashion: DashFit's Game-Changing Impact on Online Shopping through Augmented Reality",
-    date: "October 20, 2024",
-    excerpt: "An innovative Augmented Reality app by four IBA undergraduates bridging the gap between virtual and physical shopping experiences.",
-    content: `# The Future of Fashion: DashFit's Game-Changing Impact on Online Shopping through Augmented Reality
-
-In today's fast-paced digital world, online shopping has become the norm. However, the challenge of trying on clothes without physically being in a store still looms large. Enter DashFit, an innovative Augmented Reality (AR) app created by four ambitious undergraduates from the Institute of Business Administration (IBA), the largest business school in Pakistan. Adeen, Hamza, Saad, and Dania have combined their talents to bridge the gap between virtual and physical shopping experiences. By leveraging advanced AR technology, DashFit allows users to visualize how garments fit and move on their bodies, all without the need for external sensors or complicated hardware.
-
-## The Vision Behind DashFit
-The primary aim of DashFit is to deliver a seamless and engaging fashion experience to users by using AR technology, robotics concepts, and advanced depth estimation techniques. The app is designed to operate efficiently on mobile devices, ensuring that users with varying hardware capabilities can access and enjoy its features. This inclusive approach to fashion technology positions DashFit as a game-changer in the industry.
-
-## How It Works
-
-### Augmented Reality and 3D Modeling
-At the core of DashFit's functionality is its use of 3D models and real-time camera input. The app employs sophisticated algorithms that allow users to see how different clothing items will look on them as they move. By utilizing advanced techniques such as Unity's component-based architecture, DashFit can offer a modular and responsive design that adapts to user interactions.
-
-### The Architectural Framework
-DashFit operates on a hybrid architectural model that blends component-based and event-driven frameworks. This means that the app's various components — ranging from 3D models and scripts to AR tracking elements — are loosely coupled and reusable. The app responds to user movements and interactions in real time, triggering functions based on events such as pose changes or garment selection.
-
-### Realism Through Technology
-DashFit goes beyond simple visualization; it aims for realism. The app employs occlusion techniques that ensure virtual clothing interacts naturally with the real world, enhancing the user's experience. Moreover, it utilizes light estimation to dynamically adjust the lighting of virtual objects, making them appear more lifelike.
-
-## A User-Friendly Experience
-
-### Navigating DashFit
-For non-technical users, DashFit is designed with simplicity in mind. When you first open the app, you're greeted with a clean, intuitive interface that guides you seamlessly through the shopping process.
-
-**Browse the Catalog:** Start by exploring a wide array of clothing options. The high-priority feature allows you to swipe through items with ease, ensuring that finding your next favorite outfit is effortless.
-
-**View Item Descriptions:** Curious about a specific item? A simple click brings you detailed information, helping you make informed decisions.
-
-**Try On Virtually:** Perhaps the most exciting aspect of DashFit is the ability to see how clothing fits in real time. By pointing your camera at yourself or a mirror, you can view how the clothing looks, adjusting it according to your movements. This feature provides an interactive experience that mimics a physical fitting room.
-
-**Select Sizes and Multiple Items:** The app also allows you to experiment with different sizes and select multiple items before entering the virtual try-on area, enhancing your overall shopping experience.
-
-### Performance and Safety
-DashFit is optimized to provide smooth visuals, ensuring that the clothing items are displayed realistically. It runs efficiently on most low-end mobile devices without consuming excessive memory, which can be crucial for preventing overheating and maintaining device functionality.
-
-## The Components of DashFit
-- **UnityEngine:** The foundation of the app, providing essential packages for input, user interface, and physics.
-- **ARFoundation and ARCore:** These frameworks facilitate AR features, allowing DashFit to operate seamlessly across various devices.
-- **Pose Tracking and Filtering Systems:** These systems are crucial for accurately tracking body movements and reducing noise in the data, providing users with a smooth experience.
-- **Animation Rigging:** This component enables sophisticated animations, ensuring that the clothing behaves realistically during user interactions.
-
-## A Proud Achievement
-DashFit recently gained significant recognition at the prestigious IBA SMCS Symposium, one of the country's largest tech project showcases, where it was honored as one of the top three projects out of 46 presented. This accolade highlights the innovative spirit of its founders and the potential impact of the app in the fashion tech landscape. The team's dedication has propelled DashFit into the spotlight, showcasing the capabilities of young entrepreneurs in Pakistan.
-
-## Industrial Partnership with Systems Limited
-To enhance its development and implementation, DashFit formed a valuable partnership with Systems Limited, a globally recognized technology firm renowned for its commitment to innovation and excellence in IT services across regions including North America, Europe, the Middle East, Africa, and the Asia-Pacific. This collaboration has provided DashFit with essential insights and resources, further bolstering its potential to transform the online shopping experience on an international scale.
-
-## Looking Ahead
-While DashFit is already making waves in the AR fashion space, the team behind it has ambitious plans for the future. Upcoming features include expanding the clothing range to lower wear, incorporating wardrobe matching capabilities, and enhancing AR integration for an even more immersive experience.
-
-## Why DashFit Matters
-DashFit is not just about trying on clothes; it's about reimagining how consumers interact with fashion in the digital age. By eliminating the need for physical fitting rooms, DashFit empowers users to make informed purchasing decisions, reducing the likelihood of returns and fostering a more sustainable approach to fashion consumption.
-
-## Conclusion
-As we move further into the future of shopping, DashFit stands at the forefront of innovation in the fashion tech industry. By combining cutting-edge AR technology with a user-friendly interface, DashFit is set to revolutionize the online shopping experience, making it more interactive, enjoyable, and personalized.
-
-Join us on this exciting journey led by four visionary undergraduates — Adeen, Hamza, Saad, and Dania — and discover how DashFit can transform the way you shop for fashion!`,
-    tags: ["Augmented Reality", "Fashion Technology", "Tech Startups", "Final Year Projects", "Computer Vision"]
-  },
   // {
   //   id: 3,
   //   title: "Building Scalable React Applications",
@@ -414,6 +351,11 @@ const Blog = () => {
               </footer>
             </article>
           ))}
+          
+          {/* Coming Soon Message */}
+          <div className="text-center py-8">
+            <p className="text-gray-600">More Interesting Stuff Coming Soon!</p>
+          </div>
         </div>
       </div>
 
