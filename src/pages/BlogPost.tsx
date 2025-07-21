@@ -18,6 +18,7 @@ interface BlogPost {
 // Import the same blog posts data from Blog.tsx
 const blogPosts: BlogPost[] = [
   {
+    slug: "red-turtles-agentic-patterns",
     id: 1,
     title: "Red Turtles Paint Murals: 4 Agentic AI Design Patterns Every Builder Should Know",
     date: "July 21, 2025",
@@ -287,8 +288,8 @@ Would love to hear which pattern you're most excited to build with.`
 ];
 
 const BlogPost = () => {
-  const { id } = useParams<{ id: string }>();
-  const post = blogPosts.find(p => p.id === parseInt(id || '0'));
+  const { slug } = useParams<{ slug: string }>();
+  const post = blogPosts.find(p => p.slug === slug);
 
   if (!post) {
     return (
