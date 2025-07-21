@@ -13,6 +13,7 @@ interface BlogPost {
 
 const blogPosts: BlogPost[] = [
   {
+    slug: "red-turtles-agentic-patterns",
     id: 1,
     title: "Red Turtles Paint Murals: 4 Agentic AI Design Patterns Every Builder Should Know",
     date: "July 21, 2025",
@@ -313,7 +314,7 @@ const Blog = () => {
             <article
               key={post.id}
               className="bg-white border-2 border-black p-6 md:p-8 transition-all duration-300 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-4px] hover:translate-y-[-4px] cursor-pointer group"
-              onClick={() => navigate(`/blog/${post.id}`)}
+              onClick={() => navigate(`/blog/${post.slug}`)}
             >
               <header className="mb-4">
                 <h2 className="text-xl md:text-2xl font-bold mb-2 group-hover:underline transition-all duration-200">
