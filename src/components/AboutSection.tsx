@@ -3,11 +3,11 @@ import React from 'react';
 
 const AboutSection = () => {
   const stats = [
-    { number: '2,000+', label: 'Students Taught' },
+    { number: '1,000+', label: 'Students Taught' },
     { number: '8+', label: 'Org Affiliations' },
     { number: '25+', label: 'Events Led' },
     { number: '19', label: 'AI Projects Shipped' },
-    { number: '98%', label: 'Model Accuracy' },
+    { number: '98%', label: 'Avg Model Accuracy' },
     { number: '2 yrs', label: 'AI Experience' }
   ];
 
@@ -26,20 +26,20 @@ const AboutSection = () => {
         {/* Bio Content */}
         <div className="space-y-6 mb-12 text-gray-700 leading-relaxed">
           <p className="text-base md:text-lg">
-            Born and raised in Saudi Arabia, I graduated in the top 5% from IBA with a Bachelor's in Computer Science. But it’s never just been about the degree, I’ve always gravitated toward work that’s fast-moving, impact-driven, and people-focused.
+            With roots in Saudi Arabia and a degree in Computer Science from IBA (top 5%), I focus on building scalable AI systems that bridge technical depth with real-world application.
 
           </p>
           
           <p className="text-base md:text-lg">
-          Currently, I work as an AI Engineer building GPT-powered tools, deploying scalable ML pipelines, and solving tricky edge cases that demand both technical depth and creative thinking. 
+            Currently, I work as an AI Engineer building GPT powered tools, RAG pipelines, vector search systems, and cloud native ML workflows, with a focus on solving edge cases that demand both technical depth and system level thinking. 
           </p>
           
           <p className="text-base md:text-lg">
-            Over the last few years, I’ve taught thousands of students as a Teaching Assistant, mentored underserved youth through the National Talent Hunt Program, and led multiple AI and tech workshops.
+            I’ve taught as a Teaching Assistant and community educator at IBA, mentored youth through the National Talent Hunt Program, and led workshops at developer communities like Google GDGoC. I also co-founded Arcanum, an EdTech venture focused on bridging the gap between knowing and doing through industry driven bootcamps.
           </p>
           
           <p className="text-base md:text-lg">
-            Outside of work, I stay in motion, whether that’s captaining tertiary badminton team, organizing events like TEDx and WWF drives, running marathons, or building side projects with friends. I like variety, I like velocity, and I like doing work that feels alive.
+            Outside of work, I’ve captained university sports teams and helped organize initiatives like TEDx and WWF youth drives, while continuing to explore and ship side projects in the AI and product space.
           </p>
         </div>
 
