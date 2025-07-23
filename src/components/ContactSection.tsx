@@ -78,7 +78,7 @@ const ContactSection = () => {
                 className="bg-black text-white hover:bg-gray-800 font-bold text-sm px-6 py-3 border-2 border-black hover:shadow-[4px_4px_0px_rgba(0,0,0,0.25)] hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-2"
               >
                 <Calendar className="h-4 w-4" />
-                Online Coffee Chat? Book Me
+                Online Coffee Chat? Book a Slot!
               </Button>
             </div>
 
