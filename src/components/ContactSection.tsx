@@ -62,14 +62,14 @@ const ContactSection = () => {
               </div>
             </div>
 
-            <div className="flex items-center space-x-4">
+{/*             <div className="flex items-center space-x-4">
               <Phone className="h-5 w-5 md:h-6 md:w-6 flex-shrink-0" />
               <div>
                 <h3 className="font-black">PHONE</h3>
                 <p className="text-sm md:text-base">(+92) 316 848 9996</p>
                 <p className="text-sm md:text-base">(+966) 54 184 4255</p>
               </div>
-            </div>
+            </div> */}
 
             {/* Schedule Meeting Button - Left Aligned */}
             <div className="pt-4 flex justify-start">
