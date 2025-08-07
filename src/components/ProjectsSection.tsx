@@ -7,7 +7,7 @@ const ProjectsSection = () => {
   const projects = [
     { 
       id: 1,
-      title: "TABLESAGE", 
+      title: "TABLESAGE | Raw Tables --> BI Dashboard & Insights Generator", 
       desc: "AI-Powered Dashboard & KPI Insight Generator. Extracts tables from PDFs/CSVs, visualizes KPIs with Altair, and generates executive summaries using the Gemini API.", 
       tech: ["Python", "LangChain", "Gemini API", "Altair"],
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=300&fit=crop",
@@ -15,7 +15,7 @@ const ProjectsSection = () => {
     },
     { 
       id: 2,
-      title: "DASHFIT AR TRY-ON", 
+      title: "DASHFIT | AR HYPER REALISTIC VIRTUAL TRY-ON", 
       desc: "Try clothes in AR — no sensors, just smart tech. Built with Unity and ARCore for seamless virtual fitting experiences.", 
       tech: ["Unity", "ARCore", "Mediapipe"],
       image: "https://images.pexels.com/photos/6069550/pexels-photo-6069550.jpeg",
@@ -29,17 +29,17 @@ const ProjectsSection = () => {
       image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=300&fit=crop",
       link: "https://github.com/adeen-atif/MPI-Cluster"
     },
-    { 
-      id: 4,
-      title: "RAG CHATBOT", 
-      desc: "Knowledge-grounded Q&A bot using RAG architecture for intelligent document retrieval and conversation.", 
-      tech: ["LangChain", "Pinecone", "Streamlit"],
-      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&h=300&fit=crop",
-      link: "https://github.com/adeen-atif/ragchatbot"
-    },
+    // { 
+    //   id: 4,
+    //   title: "RAG CHATBOT", 
+    //   desc: "Knowledge-grounded Q&A bot using RAG architecture for intelligent document retrieval and conversation.", 
+    //   tech: ["LangChain", "Pinecone", "Streamlit"],
+    //   image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&h=300&fit=crop",
+    //   link: "https://github.com/adeen-atif/ragchatbot"
+    // },
     { 
       id: 5,
-      title: "FYPEDIA", 
+      title: "FYPEDIA - FYP RAG CHATBOT", 
       desc: "AI-Powered Final Year Project Search Engine using semantic search. Converts 1000+ FYP records into vectorized index with sentence embeddings and FAISS for intelligent, context-aware project discovery.", 
       tech: ["FastAPI", "FAISS", "Sentence Transformers", "Google Generative AI"],
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=300&fit=crop",
@@ -47,7 +47,7 @@ const ProjectsSection = () => {
     },
     { 
       id: 6,
-      title: "VOICE ID SYSTEM", 
+      title: "AUDIO FINGERPRINTER using PATTERN RECOGNITION", 
       desc: "Audio fingerprinting with real-time interface for voice recognition and identification systems.", 
       tech: ["Dejavu", "Flask", "Waveform Analysis"],
       image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=300&fit=crop",
