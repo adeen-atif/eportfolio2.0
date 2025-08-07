@@ -7,6 +7,14 @@ const ProjectsSection = () => {
   const projects = [
     { 
       id: 1,
+      title: "TABLESAGE", 
+      desc: "AI-Powered Dashboard & KPI Insight Generator. Extracts tables from PDFs/CSVs, visualizes KPIs with Altair, and generates executive summaries using the Gemini API.", 
+      tech: ["Python", "LangChain", "Gemini API", "Altair"],
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=300&fit=crop",
+      link: "https://github.com/adeen-atif/tablesage"
+    },
+    { 
+      id: 2,
       title: "DASHFIT AR TRY-ON", 
       desc: "Try clothes in AR — no sensors, just smart tech. Built with Unity and ARCore for seamless virtual fitting experiences.", 
       tech: ["Unity", "ARCore", "Mediapipe"],
@@ -14,7 +22,7 @@ const ProjectsSection = () => {
       link: "https://github.com/adeen-atif/AR_Virtual_TryOn_With_Sensorless_Depth_Perception"
     },
     { 
-      id: 2,
+      id: 3,
       title: "MPI CLUSTER", 
       desc: "Simulated parallel computing in distributed environments. High-performance computing cluster implementation.", 
       tech: ["Ubuntu", "HPC", "MPI"],
@@ -22,7 +30,7 @@ const ProjectsSection = () => {
       link: "https://github.com/adeen-atif/MPI-Cluster"
     },
     { 
-      id: 3,
+      id: 4,
       title: "RAG CHATBOT", 
       desc: "Knowledge-grounded Q&A bot using RAG architecture for intelligent document retrieval and conversation.", 
       tech: ["LangChain", "Pinecone", "Streamlit"],
@@ -30,7 +38,15 @@ const ProjectsSection = () => {
       link: "https://github.com/adeen-atif/ragchatbot"
     },
     { 
-      id: 4,
+      id: 5,
+      title: "FYPEDIA", 
+      desc: "AI-Powered Final Year Project Search Engine using semantic search. Converts 1000+ FYP records into vectorized index with sentence embeddings and FAISS for intelligent, context-aware project discovery.", 
+      tech: ["FastAPI", "FAISS", "Sentence Transformers", "Google Generative AI"],
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=300&fit=crop",
+      link: "https://github.com/adeen-atif/fypedia"
+    },
+    { 
+      id: 6,
       title: "VOICE ID SYSTEM", 
       desc: "Audio fingerprinting with real-time interface for voice recognition and identification systems.", 
       tech: ["Dejavu", "Flask", "Waveform Analysis"],
