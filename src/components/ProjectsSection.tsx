@@ -7,7 +7,7 @@ const ProjectsSection = () => {
   const projects = [
     { 
       id: 1,
-      title: "TABLESAGE | Raw Tables --> BI Dashboard & Insights Generator", 
+      title: "TABLESAGE | AI-POWERED BI & DATA ANALYST", 
       desc: "AI-Powered Dashboard & KPI Insight Generator. Extracts tables from PDFs/CSVs, visualizes KPIs with Altair, and generates executive summaries using the Gemini API.", 
       tech: ["Python", "LangChain", "Gemini API", "Altair"],
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=300&fit=crop",
@@ -43,15 +43,15 @@ const ProjectsSection = () => {
       desc: "AI-Powered Final Year Project Search Engine using semantic search. Converts 1000+ FYP records into vectorized index with sentence embeddings and FAISS for intelligent, context-aware project discovery.", 
       tech: ["FastAPI", "FAISS", "Sentence Transformers", "Google Generative AI"],
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=300&fit=crop",
-      link: "https://github.com/adeen-atif/fypedia"
+      link: "https://fypedia.vercel.app/"
     },
     { 
       id: 6,
-      title: "AUDIO FINGERPRINTER using PATTERN RECOGNITION", 
+      title: "AUDIO FINGERPRINTER VIA PATTERN RECOGNITION", 
       desc: "Audio fingerprinting with real-time interface for voice recognition and identification systems.", 
       tech: ["Dejavu", "Flask", "Waveform Analysis"],
       image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=300&fit=crop",
-      link: "https://github.com/adeen-atif/audiofingerprinter"
+      link: "https://audiofingerprinter.vercel.app/"
     }
   ];
 
