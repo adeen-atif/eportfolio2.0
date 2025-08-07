@@ -8,7 +8,7 @@ const ProjectsSection = () => {
     { 
       id: 1,
       title: "TABLESAGE | AI-POWERED BI & DATA ANALYST", 
-      desc: "AI-Powered Dashboard & KPI Insight Generator. Extracts tables from PDFs/CSVs, visualizes KPIs with Altair, and generates executive summaries using the Gemini API.", 
+      desc: "Extracts tables from PDFs/CSVs, visualizes KPIs with Altair, and generates executive summaries using the Gemini API.", 
       tech: ["Python", "LangChain", "Gemini API", "Altair"],
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=300&fit=crop",
       link: "https://tablesageai.com"
