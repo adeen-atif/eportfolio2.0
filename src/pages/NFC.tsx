@@ -49,7 +49,7 @@ const NFC = () => {
           {/* Name & Tagline */}
           <div className="mb-8">
             <h1 className="text-2xl md:text-3xl font-black mb-2">Adeen Atif</h1>
-            <p className="text-base md:text-lg text-gray-700 font-bold">AI Engineer | Co-Founder, Arcanum</p>
+            <p className="text-base md:text-lg text-gray-700 font-bold">AI Engineering | Data Science | Leadership</p>
           </div>
 
           {/* Save Contact Button */}
