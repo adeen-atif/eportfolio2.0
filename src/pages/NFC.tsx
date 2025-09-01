@@ -79,7 +79,7 @@ const NFC = () => {
               <Button 
                 variant="outline" 
                 className="border-2 border-black hover:bg-black hover:text-white p-3"
-                onClick={() => handleSocialClick('https://www.linkedin.com/in/adeenatif')}
+                onClick={() => handleSocialClick('https://www.linkedin.com/in/adeen-atif/')}
                 aria-label="Connect on LinkedIn"
               >
                 <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
