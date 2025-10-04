@@ -396,7 +396,7 @@ else -> auto_decline (reason="risk_high")`}
             I'll refresh this page for two weeks post-talk.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center pt-4">
-            <Button variant="outline" onClick={() => window.open('https://www.linkedin.com/in/adeenatif', '_blank')} className="w-full sm:w-auto">
+            <Button variant="outline" onClick={() => window.open('https://www.linkedin.com/in/adeen-atif', '_blank')} className="w-full sm:w-auto">
               LinkedIn
             </Button>
             {/* <Button variant="outline" onClick={() => window.open('mailto:adeen@example.com', '_blank')} className="w-full sm:w-auto">
