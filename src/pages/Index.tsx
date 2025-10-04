@@ -8,6 +8,7 @@ import ProjectsSection from '@/components/ProjectsSection';
 import ExperienceSection from '@/components/ExperienceSection';
 import LeadershipSection from '@/components/LeadershipSection';
 import ToolsSection from '@/components/ToolsSection';
+import ResourcesSection from '@/components/ResourcesSection';
 import ContactSection from '@/components/ContactSection';
 
 const Index = () => {
@@ -21,7 +22,9 @@ const Index = () => {
       <nav className="bg-white border-b-2 border-black p-3 md:p-4">
         <div className="container mx-auto flex justify-center items-center">
           <div className="flex flex-wrap justify-center space-x-2 md:space-x-8 gap-y-2">
-            {['About', 'Projects', 'Experience', 'Leadership', 'Tools'].map((item) => (
+            {['About', 'Projects', 'Experience', 'Leadership', 'Tools', 'Resources'].map((item) => (
+
+
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-'))}
@@ -60,6 +63,9 @@ const Index = () => {
 
       {/* Tools Section */}
       <ToolsSection />
+
+      {/* Resources Section */}
+      <ResourcesSection />
 
       {/* Contact Section */}
       <ContactSection />
