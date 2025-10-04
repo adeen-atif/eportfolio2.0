@@ -399,9 +399,9 @@ else -> auto_decline (reason="risk_high")`}
             <Button variant="outline" onClick={() => window.open('https://www.linkedin.com/in/adeenatif', '_blank')} className="w-full sm:w-auto">
               LinkedIn
             </Button>
-            <Button variant="outline" onClick={() => window.open('mailto:adeen@example.com', '_blank')} className="w-full sm:w-auto">
+            {/* <Button variant="outline" onClick={() => window.open('mailto:adeen@example.com', '_blank')} className="w-full sm:w-auto">
               Email
-            </Button>
+            </Button> */}
           </div>
         </div>
       </section>
