@@ -179,6 +179,7 @@ else -> auto_decline (reason="risk_high")`}
       <section className="container mx-auto px-4 py-12 md:py-16">
         <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 md:mb-12">FinTech Quick Patterns</h2>
         <div className="max-w-4xl mx-auto">
+          <h3 className="text-xl font-semibold mb-4">Jeddah Cohort</h3>
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="salamtech">
               <AccordionTrigger>SalamTech (Agri-FinTech)</AccordionTrigger>
@@ -263,63 +264,151 @@ else -> auto_decline (reason="risk_high")`}
                 • Model: clustering/recs for project–backer matching • Infra: cache campaign embeddings • Decision: threshold before surfacing offers.
               </AccordionContent>
             </AccordionItem>
-            
-            <AccordionItem value="gorex">
-              <AccordionTrigger>Gorex.ai (Fleet FinTech)</AccordionTrigger>
+          </Accordion>
+
+          <h3 className="text-xl font-semibold mt-8 mb-4">Riyadh Cohort</h3>
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="markaba">
+              <AccordionTrigger>Markaba (AutoFinance Brokerage)</AccordionTrigger>
               <AccordionContent>
-                • Model: anomaly thresholds on spend • Infra: stream processing; cache recent transactions • Decision: instant flag + later review.
+                • Model: credit scoring + car valuation regressors • Infra: batch scoring, cache dealer offers • Decision: instant pre-approval vs manual review.
               </AccordionContent>
             </AccordionItem>
-            
-            <AccordionItem value="rezma">
-              <AccordionTrigger>Rezma (Installments)</AccordionTrigger>
+
+            <AccordionItem value="finflow">
+              <AccordionTrigger>FinFlow (SME Finance Platform)</AccordionTrigger>
               <AccordionContent>
-                • Model: approval + affordability scorer • Infra: batch scoring during bursts • Decision: partial approvals for borderline cases.
+                • Model: risk scoring using transaction embeddings • Infra: batch nightly reconciliations • Decision: loan thresholds with manual override.
               </AccordionContent>
             </AccordionItem>
-            
-            <AccordionItem value="invora">
-              <AccordionTrigger>Invora (E-Invoicing)</AccordionTrigger>
+
+            <AccordionItem value="rifd">
+              <AccordionTrigger>RiFD (Receivables Securitization)</AccordionTrigger>
               <AccordionContent>
-                • Model: anomaly/compliance checks • Infra: rules engine first • Decision: escalate only on violations.
+                • Model: default probability models on invoices • Infra: index receivables in FAISS-like vector store • Decision: high-confidence bundles auto-approve, edge cases flagged.
               </AccordionContent>
             </AccordionItem>
-            
-            <AccordionItem value="eyrad">
-              <AccordionTrigger>Eyrad (DonationTech)</AccordionTrigger>
+
+            <AccordionItem value="feddi">
+              <AccordionTrigger>Feddi (Closed-Loop Loyalty Wallets)</AccordionTrigger>
               <AccordionContent>
-                • Model: donor intent/routing • Infra: cache suggestions • Decision: show explanations to build trust.
+                • Model: recommendation engine for offers • Infra: cache top-N personalized deals • Decision: boost merchants with high redemption rates.
               </AccordionContent>
             </AccordionItem>
-            
-            <AccordionItem value="almothamen">
-              <AccordionTrigger>ALMothamen (Real Estate Data)</AccordionTrigger>
+
+            <AccordionItem value="yasmina">
+              <AccordionTrigger>Yasmina (Embedded Insurance)</AccordionTrigger>
               <AccordionContent>
-                • Model: valuation/score • Infra: serve from cached market stats • Decision: refresh heavy models off-peak.
+                • Model: claim fraud detection (lightweight tree models) • Infra: rules engine + model ensemble • Decision: fast-approve &lt;70% risk, manual check otherwise.
               </AccordionContent>
             </AccordionItem>
-            
-            <AccordionItem value="moronah">
-              <AccordionTrigger>Moronah (Rental Financing)</AccordionTrigger>
+
+            <AccordionItem value="feelix">
+              <AccordionTrigger>Feelix AI (Customer Engagement)</AccordionTrigger>
               <AccordionContent>
-                • Model: fast eligibility score • Infra: batch under surge • Decision: staged approvals for uncertain cases.
+                • Model: intent classification + sentiment analysis • Infra: stream processing of chats • Decision: route urgent cases to human instantly.
               </AccordionContent>
             </AccordionItem>
-            
-            <AccordionItem value="qpioneers">
-              <AccordionTrigger>Qpioneers (Venture Analytics)</AccordionTrigger>
+
+            <AccordionItem value="labstation">
+              <AccordionTrigger>LabStation (Healthcare Invoice Factoring)</AccordionTrigger>
               <AccordionContent>
-                • Model: KPI anomaly/benchmarking • Infra: batch portfolio updates; hot cache for top KPIs • Decision: alert thresholds per fund stage.
+                • Model: anomaly detection on invoice amounts • Infra: OCR + structured embeddings • Decision: flag outliers for manual verification.
               </AccordionContent>
             </AccordionItem>
-            
-            <AccordionItem value="qayd">
-              <AccordionTrigger>Qayd (Debt Recording)</AccordionTrigger>
+
+            <AccordionItem value="bac">
+              <AccordionTrigger>Bac (Cashback Platform)</AccordionTrigger>
               <AccordionContent>
-                • Model: entity/contract verification • Infra: cache recent entries; use signatures • Decision: disputes → human verification.
+                • Model: transaction classification for cashback eligibility • Infra: cache merchant categories • Decision: instant cashback on known merchants, review on new ones.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="khazeena">
+              <AccordionTrigger>Khazeena (Treasury Management)</AccordionTrigger>
+              <AccordionContent>
+                • Model: forecasting cash inflows/outflows (ARIMA/Prophet baseline) • Infra: daily batch forecasts + alerts • Decision: trigger buffer top-up alerts if &lt;X days liquidity.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="parameter">
+              <AccordionTrigger>Parameter (Smart Compliance)</AccordionTrigger>
+              <AccordionContent>
+                • Model: rule-based + anomaly detection on transactions • Infra: stream monitoring + audit logs • Decision: auto-approve clean, escalate suspicious.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="khutwah">
+              <AccordionTrigger>Khutwah (Children's Wallet)</AccordionTrigger>
+              <AccordionContent>
+                • Model: spending pattern classifier (parental controls) • Infra: lightweight checks at transaction time • Decision: block risky categories, notify parents.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="modrik">
+              <AccordionTrigger>Modrik (OCR Accounting Integration)</AccordionTrigger>
+              <AccordionContent>
+                • Model: OCR + entity extraction (DocTR/Tesseract + classifier) • Infra: batch ingestion of receipts • Decision: high-confidence auto-posting, else manual check.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="sarj">
+              <AccordionTrigger>Sarj (Voice Automation for Banks)</AccordionTrigger>
+              <AccordionContent>
+                • Model: speech-to-intent (Whisper-small or DistilBERT classifier) • Infra: real-time streaming ASR • Decision: fallback to human agent if confidence &lt;80%.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="eshtarek">
+              <AccordionTrigger>Eshtarek (Subscription Management)</AccordionTrigger>
+              <AccordionContent>
+                • Model: churn prediction on subscription data • Infra: monthly batch risk scoring • Decision: auto-trigger retention offers.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="athek">
+              <AccordionTrigger>Athek (Digital Receipts)</AccordionTrigger>
+              <AccordionContent>
+                • Model: OCR + structured parsing • Infra: deduplication cache • Decision: merge with transaction only if match &gt;95%.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="adala">
+              <AccordionTrigger>Adala AI (Legal Compliance)</AccordionTrigger>
+              <AccordionContent>
+                • Model: contract clause classification (MiniLM/BERT) • Infra: doc embeddings + FAISS retrieval • Decision: flag high-risk clauses to legal team.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="letsgosky">
+              <AccordionTrigger>LetsGoSky (AI Assistants for Ops)</AccordionTrigger>
+              <AccordionContent>
+                • Model: workflow intent recognition • Infra: integrate with ops APIs • Decision: auto-complete routine ops, escalate exceptions.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="bitmal">
+              <AccordionTrigger>BitMal (Social FinTech)</AccordionTrigger>
+              <AccordionContent>
+                • Model: fraud detection + donor clustering • Infra: real-time scoring of donations • Decision: auto-greenlight small gifts, hold suspicious.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="malstream">
+              <AccordionTrigger>Malstream (Real Estate Cashflow)</AccordionTrigger>
+              <AccordionContent>
+                • Model: rent payment forecasting (Prophet/XGBoost) • Infra: daily batch forecasts • Decision: trigger alerts on likely late payments.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="cepro">
+              <AccordionTrigger>Cepro (Brand Protection)</AccordionTrigger>
+              <AccordionContent>
+                • Model: image/text similarity for counterfeit detection • Infra: vector search for logos/keywords • Decision: flag matches above 85% confidence.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
+
           <p className="text-sm text-muted-foreground mt-6">
             Startups per Tech Champions 5 (Jeddah) cohort flyer.
           </p>
