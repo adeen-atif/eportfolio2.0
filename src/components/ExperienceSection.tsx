@@ -6,20 +6,33 @@ const ExperienceSection = () => {
   const experiences = [
     {
       id: 1,
+      company: "Ticketwala",
+      role: "Head of Product & AI", 
+      duration: "Jun 2025 – Present",
+      description: [
+        "Leading product strategy and AI innovation for ticketing platform",
+        "Driving AI-powered features to enhance user experience",
+        "Overseeing end-to-end product development and AI integration"
+      ],
+      tech: ["Product Management", "AI Strategy", "Leadership"],
+      logo: "public/lovable-uploads/ticketwala-logo.png",
+      current: true
+    },
+    {
+      id: 2,
       company: "Confinality",
       role: "AI Engineer", 
-      duration: "Oct 2024 – Present",
+      duration: "Oct 2024 – Jun 2025",
       description: [
         "Built honeypot and answering machine classifiers with 98% accuracy",
         "Designed GPT-powered analytics chatbots using LangChain + BigQuery",
         "Deployed scalable ML pipelines via Vertex AI on GCP"
       ],
       tech: ["LangChain", "BigQuery", "Vertex AI", "GCP"],
-      logo: "/lovable-uploads/1691082323255.jpeg",
-      current: true
+      logo: "public/lovable-uploads/1691082323255.jpeg"
     },
     {
-      id: 2,
+      id: 3,
       company: "Vidizmo (Softech Worldwide)",
       role: "Associate Product Engineer",
       duration: "Jun 2024 – Oct 2024",
@@ -28,10 +41,10 @@ const ExperienceSection = () => {
         "Automated multimedia redaction pipeline with Aspose + MTCNN"
       ],
       tech: ["PaddleOCR", "Aspose", "MTCNN", "Python"],
-      logo: "/lovable-uploads/vidizmo-logo-png_seeklogo-428353.png"
+      logo: "public/lovable-uploads/vidizmo-logo-png_seeklogo-428353.png"
     },
     {
-      id: 3,
+      id: 4,
       company: "Systems Ltd",
       role: "AI/ML Engineering Trainee",
       duration: "Aug 2023 – Jun 2024",
@@ -41,10 +54,10 @@ const ExperienceSection = () => {
         "Enhanced dynamic fit accuracy for virtual clothing experiences"
       ],
       tech: ["MediaPipe", "ARCore", "Unity", "OneEuro"],
-      logo: "/lovable-uploads/systems_limited_logo.jpeg"
+      logo: "public/lovable-uploads/systems_limited_logo.jpeg"
     },
     {
-      id: 4,
+      id: 5,
       company: "Pakistan State Oil (PSO)",
       role: "Data Science Intern",
       duration: "Jul 2023 – Aug 2023",
@@ -54,7 +67,7 @@ const ExperienceSection = () => {
         "Implemented data visualization dashboards for monitoring"
       ],
       tech: ["OpenCV", "Python", "Data Analysis"],
-      logo: "/lovable-uploads/pso-logo.png"
+      logo: "public/lovable-uploads/pso-logo.png"
     }
   ];
 
