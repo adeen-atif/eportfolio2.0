@@ -4,13 +4,13 @@ import { Badge } from '@/components/ui/badge';
 
 const LeadershipSection = () => {
   const leadership = [
-    { 
-      title: "MCIT CODE Speaker & Mentor", 
-      desc: "Led workshops and mentored emerging startups on AI Optimization ",
-      year: "2025",
-      logo: "/lovable-uploads/mcit-logo.png",
-      photo: "/lovable-uploads/mcit-photo.png"
-    },
+    // { 
+    //   title: "MCIT CODE Speaker & Mentor", 
+    //   desc: "In Riyadh and Jeddag cohorts, led workshops and mentored emerging startups on AI Optimization",
+    //   year: "2025",
+    //   logo: "/lovable-uploads/mcit-logo.png",
+    //   photo: "/lovable-uploads/mcit-photo.png"
+    // },
     { 
       title: "NASA Space Apps Challenge Judge", 
       desc: "Mentored and judged teams on various Astronomy + AI use cases ",
