@@ -7,11 +7,11 @@ const ProjectsSection = () => {
   const projects = [
     { 
       id: 1,
-      title: "TABLESAGE | AI-POWERED BI & DATA ANALYST", 
+      title: "TABRIC | AI-POWERED BI & DATA ANALYST", 
       desc: "Extracts tables from PDFs/CSVs, visualizes KPIs with Altair, and generates executive summaries using the Gemini API.", 
       tech: ["Python", "LangChain", "Gemini API", "Altair"],
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=300&fit=crop",
-      link: "https://tablesageai.com"
+      link: "https://tabricai.com"
     },
     { 
       id: 2,
