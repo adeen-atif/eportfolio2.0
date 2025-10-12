@@ -5,6 +5,20 @@ import { Badge } from '@/components/ui/badge';
 const LeadershipSection = () => {
   const leadership = [
     { 
+      title: "MCIT CODE Speaker & Mentor", 
+      desc: "Led workshops and mentored emerging startups on AI Optimization ",
+      year: "2025",
+      logo: "/lovable-uploads/mcit-logo.png",
+      photo: "/lovable-uploads/mcit-photo.png"
+    },
+    { 
+      title: "NASA Space Apps Challenge Judge", 
+      desc: "Mentored and judged teams on various Astronomy + AI use cases ",
+      year: "2023",
+      logo: "/lovable-uploads/nasa-logo.png",
+      photo: "/lovable-uploads/nasa-photo.png"
+    },
+    { 
       title: "GOOGLE DSC LEAD", 
       desc: "Led 10+ tech events, mentorship circles, and bootcamps.",
       year: "2023",
