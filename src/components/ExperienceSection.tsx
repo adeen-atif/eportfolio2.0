@@ -6,9 +6,21 @@ const ExperienceSection = () => {
   const experiences = [
     {
       id: 1,
+      company: "Arcanum Academy",
+      role: "Co-Founder", 
+      duration: "May 2025 – Present",
+      description: [
+        "Leading an ed-tech ecosystem to bridge the gap between knowing and doing"
+      ],
+      tech: ["Public Speaking", "Soft Skills", "Leadership"],
+      logo: "/lovable-uploads/arcanum-logo.png",
+      current: true
+    },
+    {
+      id: 2,
       company: "Ticketwala",
       role: "Head of Product & AI", 
-      duration: "Jun 2025 – Present",
+      duration: "Sep 2025 – Present",
       description: [
         "Leading product strategy and AI innovation for ticketing platform",
         "Driving AI-powered features to enhance user experience",
@@ -19,7 +31,19 @@ const ExperienceSection = () => {
       current: true
     },
     {
-      id: 2,
+      id: 3,
+      company: "TabricAI",
+      role: "Founder", 
+      duration: "Aug 2025 – Present",
+      description: [
+        "Automating the Data & BI Analysis pipeline for SMEs and Large Enterprises"
+      ],
+      tech: ["Product Management", "AI Strategy", "Leadership"],
+      logo: "/lovable-uploads/tabric-logo.png",
+      current: true
+    },
+    {
+      id: 4,
       company: "Confinality",
       role: "AI Engineer", 
       duration: "Oct 2024 – Jun 2025",
@@ -32,7 +56,7 @@ const ExperienceSection = () => {
       logo: "/lovable-uploads/1691082323255.jpeg"
     },
     {
-      id: 3,
+      id: 5,
       company: "Vidizmo (Softech Worldwide)",
       role: "Associate Product Engineer",
       duration: "Jun 2024 – Oct 2024",
@@ -44,7 +68,7 @@ const ExperienceSection = () => {
       logo: "/lovable-uploads/vidizmo-logo-png_seeklogo-428353.png"
     },
     {
-      id: 4,
+      id: 6,
       company: "Systems Ltd",
       role: "AI/ML Engineering Trainee",
       duration: "Aug 2023 – Jun 2024",
@@ -57,7 +81,7 @@ const ExperienceSection = () => {
       logo: "/lovable-uploads/systems_limited_logo.jpeg"
     },
     {
-      id: 5,
+      id: 7,
       company: "Pakistan State Oil (PSO)",
       role: "Data Science Intern",
       duration: "Jul 2023 – Aug 2023",
