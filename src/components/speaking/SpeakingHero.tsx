@@ -73,13 +73,17 @@ const SpeakingHero = () => {
             </div>
           </div>
 
-          {/* Right side - abstract shape with parallax */}
-          <div 
-            className="hidden lg:block relative h-[400px] animate-fade-in"
-            style={{ animationDelay: "150ms" }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-primary/10 to-transparent rounded-[2rem] transform rotate-3 hover:rotate-6 transition-transform duration-700" />
-            <div className="absolute inset-8 bg-gradient-to-tl from-accent/20 via-accent/10 to-transparent rounded-[2rem] transform -rotate-3 hover:-rotate-6 transition-transform duration-700" />
+          {/* Right Column - Hero Image */}
+          <div className="relative lg:flex items-center justify-center hidden">
+            <div className="relative w-full max-w-md">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-accent/20 to-primary/10 rounded-3xl blur-3xl" />
+              <img 
+                src="/images/Me.jpg" 
+                alt="Adeen Atif speaking at TEDx Clifton"
+                className="relative w-full h-auto rounded-3xl shadow-2xl object-cover"
+                style={{ animation: "fade-in 0.7s ease-out" }}
+              />
+            </div>
           </div>
         </div>
       </div>
