@@ -26,10 +26,10 @@ const speakingData = [
     title: "ByBit First Crypto Conference Pakistan Host 2025",
     meta: ["Pakistan", "2025", "Host/Moderator"],
     images: [
-      "/images/ByBit1.JPG",
+      "/images/ByBit1.jpg",
       "/images/ByBit2.JPG",
       "/images/ByBit3.JPG",
-      "/images/ByBit4.JPG"
+      "/images/ByBit4.jpg"
     ],
     alt: [
       "ByBit Crypto Conference - Opening",
