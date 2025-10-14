@@ -8,12 +8,12 @@ interface HorizontalSectionProps {
 
 const HorizontalSection = ({ title, subtitle, children }: HorizontalSectionProps) => {
   return (
-    <section className="space-y-6">
-      <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
-        <h2 className="text-3xl lg:text-4xl font-bold text-foreground">
+    <section className="space-y-4 sm:space-y-6">
+      <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-2 sm:gap-4">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground">
           {title}
         </h2>
-        <p className="text-sm text-muted-foreground lg:text-right max-w-md">
+        <p className="text-xs sm:text-sm text-muted-foreground lg:text-right max-w-md">
           {subtitle}
         </p>
       </div>
