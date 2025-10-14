@@ -13,7 +13,7 @@ const speakingData = [
     title: "ByBit First Crypto Conference Pakistan Host 2025",
     meta: ["Pakistan", "2025", "Host/Moderator"],
     images: [
-      "/images/ByBit1.JPG",
+      // "/images/ByBit1.JPG",
       "/images/ByBit2.JPG",
       "/images/ByBit3.JPG"
     ],
@@ -52,8 +52,8 @@ const speakingData = [
     title: "Google DSC Hackfest (Pakistan, 2024)",
     meta: ["Pakistan", "2024", "Keynote/Workshop"],
     images: [
-      "/images/Hackfest1.jpg",
-      "/images/Hackfest2.jpg"
+      "/images/Hackfest2.jpg",
+      "/images/Hackfest1.jpg"
     ],
     alt: [
       "DSC Hackfest keynote",
