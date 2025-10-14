@@ -128,7 +128,7 @@ const shortsData = [
     title: "Google Build with AI, News Interview",
     meta: ["ARY News", "2025"],
     video: "/images/ARYIntervieww.mp4",
-    thumbnail: "/images/Me.jpg",
+    thumbnail: "/images/ARYthumbnail.png",
     alt: "ARY News Interview - Google Build with AI"
   },
   {
