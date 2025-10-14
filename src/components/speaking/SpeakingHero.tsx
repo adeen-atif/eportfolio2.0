@@ -67,7 +67,7 @@ const SpeakingHero = () => {
               >
                 <a href="/assets/speaker-onepager.pdf" download>
                   <Download className="mr-2 h-4 w-4" />
-                  Download Speaker One-Pager (PDF)
+                  Download Speaker Biography (PDF)
                 </a>
               </Button>
             </div>
