@@ -10,9 +10,10 @@ interface ExperienceCardProps {
   alt: string[];
   video?: string;
   onRequest: () => void;
+  disableCarousel?: boolean;
 }
 
-const ExperienceCard = ({ title, meta, images, alt, video, onRequest }: ExperienceCardProps) => {
+const ExperienceCard = ({ title, meta, images, alt, video, onRequest, disableCarousel = false }: ExperienceCardProps) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -49,8 +50,9 @@ const ExperienceCard = ({ title, meta, images, alt, video, onRequest }: Experien
         animation: "fade-in 0.5s ease-out",
       }}
     >
-      {/* Image Carousel */}
-      <div className="relative aspect-video bg-muted overflow-hidden">
+      {/* Image Carousel - only render if images exist */}
+      {images && images.length > 0 && (
+        <div className="relative aspect-video bg-muted overflow-hidden">
         {video && currentSlide === 0 ? (
           <video
             src={video}
@@ -69,38 +71,43 @@ const ExperienceCard = ({ title, meta, images, alt, video, onRequest }: Experien
           />
         )}
 
-        {/* Navigation arrows */}
-        <button
-          onClick={prevSlide}
-          className="absolute left-2 top-1/2 -translate-y-1/2 bg-background/80 hover:bg-background p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-          aria-label="Previous image"
-        >
-          <ChevronLeft className="h-4 w-4" />
-        </button>
-        <button
-          onClick={nextSlide}
-          className="absolute right-2 top-1/2 -translate-y-1/2 bg-background/80 hover:bg-background p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-          aria-label="Next image"
-        >
-          <ChevronRight className="h-4 w-4" />
-        </button>
-
-        {/* Dots */}
-        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
-          {images.map((_, idx) => (
+        {/* Navigation arrows - only show if carousel enabled and multiple images */}
+        {!disableCarousel && images.length > 1 && (
+          <>
             <button
-              key={idx}
-              onClick={() => goToSlide(idx)}
-              className={`w-2 h-2 rounded-full transition-all duration-200 ${
-                idx === currentSlide
-                  ? "bg-primary w-6"
-                  : "bg-background/60 hover:bg-background"
-              }`}
-              aria-label={`Go to slide ${idx + 1}`}
-            />
-          ))}
+              onClick={prevSlide}
+              className="absolute left-2 top-1/2 -translate-y-1/2 bg-background/80 hover:bg-background p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+              aria-label="Previous image"
+            >
+              <ChevronLeft className="h-4 w-4" />
+            </button>
+            <button
+              onClick={nextSlide}
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-background/80 hover:bg-background p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+              aria-label="Next image"
+            >
+              <ChevronRight className="h-4 w-4" />
+            </button>
+
+            {/* Dots */}
+            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
+              {images.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => goToSlide(idx)}
+                  className={`w-2 h-2 rounded-full transition-all duration-200 ${
+                    idx === currentSlide
+                      ? "bg-primary w-6"
+                      : "bg-background/60 hover:bg-background"
+                  }`}
+                  aria-label={`Go to slide ${idx + 1}`}
+                />
+              ))}
+            </div>
+          </>
+        )}
         </div>
-      </div>
+      )}
 
       {/* Content */}
       <div className="p-5 space-y-3">
