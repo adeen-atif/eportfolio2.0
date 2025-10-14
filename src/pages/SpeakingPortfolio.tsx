@@ -9,40 +9,66 @@ import { Helmet } from "react-helmet";
 
 const speakingData = [
   {
+    title: "Arcanum Launch Event 2025",
+    meta: ["Pakistan", "2025", "Host/Speaker"],
+    images: [
+      "/images/ArcanumLaunch1.JPG",
+      "/images/ArcanumLaunch2.JPG",
+      "/images/ArcanumLaunch3.JPG"
+    ],
+    alt: [
+      "Arcanum Launch Event - Main Stage",
+      "Arcanum Launch Event - Audience",
+      "Arcanum Launch Event - Panel Discussion"
+    ]
+  },
+  {
+    title: "ByBit First Crypto Conference Pakistan Host 2025",
+    meta: ["Pakistan", "2025", "Host/Moderator"],
+    images: [
+      "/images/ByBit1.JPG",
+      "/images/ByBit2.JPG",
+      "/images/ByBit3.JPG",
+      "/images/ByBit4.JPG"
+    ],
+    alt: [
+      "ByBit Crypto Conference - Opening",
+      "ByBit Conference - Panel",
+      "ByBit Conference - Stage",
+      "ByBit Conference - Audience Interaction"
+    ]
+  },
+  {
     title: "MCIT — CODE @ KSU (Riyadh, 2025)",
     meta: ["Riyadh", "2025", "Keynote/Panel/Workshop"],
     images: [
-      "/images/speaking/ksu/slide-1.webp",
-      "/images/speaking/ksu/slide-2.webp",
-      "/images/speaking/ksu/slide-3.webp"
+      "/images/CODE_MCIT_Riyadh1.jpg",
+      "/images/CODE_MCIT_Riyadh2.jpg"
     ],
     alt: [
       "Adeen at MCIT CODE KSU — stage wide",
-      "Audience view at KSU Riyadh",
-      "Close-up Q&A at CODE KSU"
+      "Audience view at KSU Riyadh"
     ]
   },
   {
     title: "MCIT — CODE (Jeddah, 2025)",
     meta: ["Jeddah", "2025", "Workshop/Panel"],
     images: [
-      "/images/speaking/jeddah-code/slide-1.webp",
-      "/images/speaking/jeddah-code/slide-2.webp",
-      "/images/speaking/jeddah-code/slide-3.webp"
+      "/images/CODE_MCIT_Jeddah1.jpeg",
+      "/images/CODE_MCIT_Jeddah2.jpeg"
     ],
     alt: [
       "MCIT CODE Jeddah main stage",
-      "Hands-on segment — Jeddah cohort",
-      "Panel with founders — Jeddah"
+      "Hands-on segment — Jeddah cohort"
     ]
   },
   {
     title: "US Consulate Pakistan",
     meta: ["Pakistan", "Talk/Panel"],
     images: [
-      "/images/speaking/us-consulate/slide-1.webp",
-      "/images/speaking/us-consulate/slide-2.webp",
-      "/images/speaking/us-consulate/slide-3.webp"
+      "/images/USConsulate1.jpg",
+      "/images/USConsulate2.jpg",
+      "/images/USConsulate3.jpg"
     ],
     alt: [
       "US Consulate session",
@@ -54,38 +80,22 @@ const speakingData = [
     title: "TEDx Clifton (Pakistan, 2025)",
     meta: ["Karachi", "2025", "TEDx Talk"],
     images: [
-      "/images/speaking/tedx/slide-1.webp",
-      "/images/speaking/tedx/slide-2.webp",
-      "/images/speaking/tedx/slide-3.webp"
+      "/images/TedXClifton.jpg"
     ],
     alt: [
-      "TEDx Clifton red dot stage",
-      "TEDx Clifton audience",
-      "Post-talk discussion — TEDx"
+      "TEDx Clifton red dot stage"
     ]
   },
   {
     title: "Google DSC Hackfest (Pakistan, 2024)",
     meta: ["Pakistan", "2024", "Keynote/Workshop"],
     images: [
-      "/images/speaking/dsc-hackfest/slide-1.webp",
-      "/images/speaking/dsc-hackfest/slide-2.webp"
+      "/images/Hackfest1.jpg",
+      "/images/Hackfest2.jpg"
     ],
     alt: [
       "DSC Hackfest keynote",
       "Team mentoring breakout"
-    ]
-  },
-  {
-    title: "Google DSC Hackathon (Pakistan, 2022)",
-    meta: ["Pakistan", "2022", "Keynote/Panel"],
-    images: [
-      "/images/speaking/dsc-hackathon/slide-1.webp",
-      "/images/speaking/dsc-hackathon/slide-2.webp"
-    ],
-    alt: [
-      "DSC Hackathon opening",
-      "Judges and speakers line-up"
     ]
   }
 ];
@@ -93,79 +103,40 @@ const speakingData = [
 const mentorshipData = [
   {
     title: "Tech Champions 5 — Riyadh Cohort (2025)",
-    meta: ["Riyadh", "2025", "Mentor/Jury"],
-    images: [
-      "/images/mentorship/tech-champions/riyadh-1.webp",
-      "/images/mentorship/tech-champions/riyadh-2.webp"
-    ],
-    alt: [
-      "Riyadh cohort workshop",
-      "Team review — Riyadh"
-    ]
+    meta: ["Riyadh", "2025", "Mentor/Jury"]
   },
   {
     title: "Tech Champions 5 — Jeddah Cohort (2025)",
-    meta: ["Jeddah", "2025", "Mentor/Jury"],
-    images: [
-      "/images/mentorship/tech-champions/jeddah-1.webp",
-      "/images/mentorship/tech-champions/jeddah-2.webp"
-    ],
-    alt: [
-      "Jeddah cohort mentoring",
-      "Pitch feedback — Jeddah"
-    ]
+    meta: ["Jeddah", "2025", "Mentor/Jury"]
   },
   {
     title: "NASA Space Apps Challenge — Pakistan",
-    meta: ["Pakistan", "Mentor/Jury"],
-    images: [
-      "/images/mentorship/nasa/slide-1.webp",
-      "/images/mentorship/nasa/slide-2.webp"
-    ],
-    alt: [
-      "NASA Space Apps jury room",
-      "Team standups — NASA SAC"
-    ]
+    meta: ["Pakistan", "Mentor/Jury"]
   },
   {
     title: "World Robot Olympiad — Pakistan (2023)",
-    meta: ["Pakistan", "2023", "Jury"],
-    images: [
-      "/images/mentorship/wro/slide-1.webp",
-      "/images/mentorship/wro/slide-2.webp"
-    ],
-    alt: [
-      "WRO arena — Pakistan",
-      "Judging rubric review — WRO"
-    ]
+    meta: ["Pakistan", "2023", "Jury"]
   },
   {
     title: "WWF Plastiography — Pakistan (2021)",
-    meta: ["Pakistan", "2021", "Jury/Mentor"],
-    images: [
-      "/images/mentorship/wwf/slide-1.webp",
-      "/images/mentorship/wwf/slide-2.webp"
-    ],
-    alt: [
-      "WWF Plastiography exhibition",
-      "Student showcase — WWF"
-    ]
+    meta: ["Pakistan", "2021", "Jury/Mentor"]
   }
 ];
 
-const mediaData = [
+const shortsData = [
   {
-    title: "ARY News — Google Build with AI (Pakistan, 2025)",
-    meta: ["Pakistan", "2025", "TV Interview"],
-    images: [
-      "/images/media/ary/slide-1.webp",
-      "/images/media/ary/slide-2.webp"
-    ],
-    video: "/videos/ary-interview.mp4",
-    alt: [
-      "ARY studio interview — Build with AI",
-      "On-air lower third — Adeen Atif"
-    ]
+    title: "Google Build with AI, News Interview",
+    meta: ["ARY News", "2025"],
+    video: "/images/ARYInterview.mov.mp4",
+    thumbnail: "/images/Me.jpg",
+    alt: "ARY News Interview - Google Build with AI"
+  },
+  {
+    title: "How NOT to Approach someone when Networking",
+    meta: ["Arcanum Launch", "2025"],
+    video: "/images/ArcanumLaunchVideo.MP4",
+    thumbnail: "/images/ArcanumLaunch1.JPG",
+    alt: "Networking tips from Arcanum Launch"
   }
 ];
 
@@ -223,22 +194,50 @@ const SpeakingPortfolio = () => {
             {mentorshipData.map((item, idx) => (
               <ExperienceCard
                 key={idx}
-                {...item}
+                title={item.title}
+                meta={item.meta}
+                images={[]}
+                alt={[]}
                 onRequest={() => handleRequestClick("Mentorship", item.title)}
+                disableCarousel
               />
             ))}
           </HorizontalSection>
 
           <HorizontalSection
-            title="In the Media"
-            subtitle="Interviews & features that carried the story."
+            title="Shorts"
+            subtitle="Quick takes, real moments."
           >
-            {mediaData.map((item, idx) => (
-              <ExperienceCard
+            {shortsData.map((item, idx) => (
+              <div
                 key={idx}
-                {...item}
-                onRequest={() => handleRequestClick("Media", item.title)}
-              />
+                className="flex-shrink-0 w-[280px] snap-center group overflow-hidden rounded-2xl transition-all duration-200 hover:shadow-lg hover:scale-[1.01]"
+              >
+                <video
+                  src={item.video}
+                  poster={item.thumbnail}
+                  controls
+                  className="w-full aspect-[9/16] object-cover bg-muted"
+                  preload="metadata"
+                >
+                  Your browser does not support the video tag.
+                </video>
+                <div className="p-4 bg-card">
+                  <h3 className="font-bold text-sm text-foreground line-clamp-2 mb-2">
+                    {item.title}
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {item.meta.map((chip, chipIdx) => (
+                      <span
+                        key={chipIdx}
+                        className="text-xs px-2 py-1 rounded-md bg-muted text-muted-foreground"
+                      >
+                        {chip}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
             ))}
           </HorizontalSection>
 
