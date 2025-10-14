@@ -174,7 +174,7 @@ const SpeakingPortfolio = () => {
         <SpeakingHeader />
         <SpeakingHero />
         
-        <main className="container mx-auto px-4 py-16 space-y-24">
+        <main className="container mx-auto px-4 py-8 sm:py-12 lg:py-16 space-y-12 sm:space-y-16 lg:space-y-24">
           <HorizontalSection
             title="Speaking Experience"
             subtitle="Keynotes, panels, and workshops where I turned practice into playbooks."
@@ -212,8 +212,7 @@ const SpeakingPortfolio = () => {
             {shortsData.map((item, idx) => (
               <div
                 key={idx}
-                className="flex-shrink-0 w-[280px] snap-center group overflow-hidden rounded-2xl transition-all duration-200 hover:shadow-lg hover:scale-[1.01]"
-              >
+                className="flex-shrink-0 w-[240px] sm:w-[280px] snap-center group overflow-hidden rounded-2xl transition-all duration-200 hover:shadow-lg hover:scale-[1.01]"              >
                 <video
                   src={item.video}
                   poster={item.thumbnail}
