@@ -21,7 +21,8 @@ const SpeakingHero = () => {
             
             {/* Default tagline - Option A */}
             <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed">
-              I speak where tech meets product — AI, data, and impact. Talks that feel like a playbook, not a pitch.
+              I speak about ideas that connect people, spark change, and move things forward.
+              {/* I speak where tech meets product — AI, data, and impact. Talks that feel like a playbook, not a pitch. */}
             </p>
             
             {/* Alternative taglines (commented) */}
