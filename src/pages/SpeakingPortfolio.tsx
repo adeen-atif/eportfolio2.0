@@ -8,20 +8,7 @@ import SpeakingFooter from "@/components/speaking/SpeakingFooter";
 import { Helmet } from "react-helmet";
 
 const speakingData = [
-  {
-    title: "Arcanum Launch Event 2025",
-    meta: ["Pakistan", "2025", "Host/Speaker"],
-    images: [
-      "/images/ArcanumLaunch1.JPG",
-      "/images/ArcanumLaunch2.JPG",
-      "/images/ArcanumLaunch3.JPG"
-    ],
-    alt: [
-      "Arcanum Launch Event - Main Stage",
-      "Arcanum Launch Event - Audience",
-      "Arcanum Launch Event - Panel Discussion"
-    ]
-  },
+
   {
     title: "ByBit First Crypto Conference Pakistan Host 2025",
     meta: ["Pakistan", "2025", "Host/Moderator"],
@@ -38,31 +25,7 @@ const speakingData = [
       "ByBit Conference - Audience Interaction"
     ]
   },
-  {
-    title: "MCIT — CODE @ KSU (Riyadh, 2025)",
-    meta: ["Riyadh", "2025", "Keynote/Panel/Workshop"],
-    images: [
-      "/images/CODE_MCIT_Riyadh1.jpg",
-      "/images/CODE_MCIT_Riyadh2.jpg"
-    ],
-    alt: [
-      "Adeen at MCIT CODE KSU — stage wide",
-      "Audience view at KSU Riyadh"
-    ]
-  },
-  {
-    title: "MCIT — CODE (Jeddah, 2025)",
-    meta: ["Jeddah", "2025", "Workshop/Panel"],
-    images: [
-      "/images/CODE_MCIT_Jeddah1.jpeg",
-      "/images/CODE_MCIT_Jeddah2.jpeg"
-    ],
-    alt: [
-      "MCIT CODE Jeddah main stage",
-      "Hands-on segment — Jeddah cohort"
-    ]
-  },
-  {
+    {
     title: "US Consulate Pakistan",
     meta: ["Pakistan", "Talk/Panel"],
     images: [
@@ -97,7 +60,46 @@ const speakingData = [
       "DSC Hackfest keynote",
       "Team mentoring breakout"
     ]
+  },
+    {
+    title: "Arcanum Launch Event 2025",
+    meta: ["Pakistan", "2025", "Host/Speaker"],
+    images: [
+      "/images/ArcanumLaunch1.JPG",
+      "/images/ArcanumLaunch2.JPG",
+      "/images/ArcanumLaunch3.JPG"
+    ],
+    alt: [
+      "Arcanum Launch Event - Main Stage",
+      "Arcanum Launch Event - Audience",
+      "Arcanum Launch Event - Panel Discussion"
+    ]
+  },
+  {
+    title: "MCIT — CODE @ KSU (Riyadh, 2025)",
+    meta: ["Riyadh", "2025", "Keynote/Panel/Workshop"],
+    images: [
+      "/images/CODE_MCIT_Riyadh1.jpg",
+      "/images/CODE_MCIT_Riyadh2.jpg"
+    ],
+    alt: [
+      "Adeen at MCIT CODE KSU — stage wide",
+      "Audience view at KSU Riyadh"
+    ]
+  },
+  {
+    title: "MCIT — CODE (Jeddah, 2025)",
+    meta: ["Jeddah", "2025", "Workshop/Panel"],
+    images: [
+      "/images/CODE_MCIT_Jeddah1.jpeg",
+      "/images/CODE_MCIT_Jeddah2.jpeg"
+    ],
+    alt: [
+      "MCIT CODE Jeddah main stage",
+      "Hands-on segment — Jeddah cohort"
+    ]
   }
+
 ];
 
 const mentorshipData = [
