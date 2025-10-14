@@ -15,8 +15,7 @@ const speakingData = [
     images: [
       "/images/ByBit1.JPG",
       "/images/ByBit2.JPG",
-      "/images/ByBit3.JPG",
-      "/images/ByBit4.JPG"
+      "/images/ByBit3.JPG"
     ],
     alt: [
       "ByBit Crypto Conference - Opening",
