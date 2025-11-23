@@ -8,9 +8,23 @@ import SpeakingFooter from "@/components/speaking/SpeakingFooter";
 import { Helmet } from "react-helmet";
 
 const speakingData = [
-
   {
-    title: "ByBit First Crypto Conference Pakistan Host 2025",
+    title: "Emcee, Email Marketing Summit, Riyadh, IXG",
+    meta: ["Pakistan", "2025", "Host/Moderator"],
+    images: [
+      "/images/ByBit1.JPG",
+      "/images/ByBit2.JPG",
+      "/images/ByBit3.JPG"
+    ],
+    alt: [
+      "ByBit Crypto Conference - Opening",
+      "ByBit Conference - Panel",
+      "ByBit Conference - Stage",
+      "ByBit Conference - Audience Interaction"
+    ]
+  },
+  {
+    title: "ByBit First Crypto Conference Pakistan 2025",
     meta: ["Pakistan", "2025", "Host/Moderator"],
     images: [
       // "/images/ByBit1.JPG",
@@ -39,7 +53,7 @@ const speakingData = [
     ]
   },
   {
-    title: "TEDx Clifton (Pakistan, 2025)",
+    title: "TEDx Clifton, Pakistan, 2025",
     meta: ["Karachi", "2025", "TEDx Talk"],
     images: [
       "/images/TedXClifton.jpg"
@@ -49,7 +63,7 @@ const speakingData = [
     ]
   },
   {
-    title: "Google DSC Hackfest (Pakistan, 2024)",
+    title: "Google DSC Hackfest, Pakistan, 2024",
     meta: ["Pakistan", "2024", "Keynote/Workshop"],
     images: [
       "/images/Hackfest2.jpg",
@@ -75,7 +89,7 @@ const speakingData = [
     ]
   },
   {
-    title: "MCIT — CODE @ KSU (Riyadh, 2025)",
+    title: "MCIT — CODE @ KSU, Riyadh, 2025",
     meta: ["Riyadh", "2025", "Keynote/Panel/Workshop"],
     images: [
       "/images/CODE_MCIT_Riyadh1.jpg",
@@ -87,7 +101,7 @@ const speakingData = [
     ]
   },
   {
-    title: "MCIT — CODE (Jeddah, 2025)",
+    title: "MCIT — CODE, Jeddah, 2025",
     meta: ["Jeddah", "2025", "Workshop/Panel"],
     images: [
       "/images/CODE_MCIT_Jeddah1.jpeg",
