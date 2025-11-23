@@ -12,9 +12,17 @@ const speakingData = [
     title: "Emcee, Email Marketing Summit, Riyadh, IXG",
     meta: ["Pakistan", "2025", "Host/Moderator"],
     images: [
-      "/images/ByBit1.JPG",
-      "/images/ByBit2.JPG",
-      "/images/ByBit3.JPG"
+      "/images/IXG1.JPG",
+      "/images/IXG2.JPG",
+      "/images/IXG3.JPG",
+      "/images/IXG4.JPG",
+      "/images/IXG5.JPG",
+      "/images/IXG6.JPG",
+      "/images/IXG7.JPG",
+      "/images/IXG8.JPG",
+      "/images/IXG9.JPG",
+      "/images/IXG10.JPG"
+
     ],
     alt: [
       "ByBit Crypto Conference - Opening",
