@@ -45,7 +45,45 @@ const ContactSection = () => {
       <div className="mx-auto max-w-6xl px-5 sm:px-8 py-14 md:py-20">
         <SectionHeading size="lg">Let&apos;s talk</SectionHeading>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <p className="-mt-4 mb-8 text-base max-w-xl text-neutral-700">
+          The quickest way to reach me is the form. It lands straight in my
+          inbox.
+        </p>
+
+        <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-8">
+          {/* Form */}
+          <Window filename="new-message.txt" shadow="md">
+            <form onSubmit={handleSubmit} className="space-y-3">
+              <input
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
+                placeholder="Your name"
+                className={field}
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
+                placeholder="Your email"
+                className={field}
+                required
+              />
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleInputChange}
+                placeholder="Your message"
+                className={`${field} min-h-32 resize-y`}
+                required
+              />
+              <button type="submit" className="btn-retro btn-solid w-full justify-center">
+                Send message
+              </button>
+            </form>
+          </Window>
           {/* Details */}
           <Window filename="contact-card.vcf" shadow="md">
             <div className="space-y-6">
@@ -98,39 +136,6 @@ const ContactSection = () => {
             </div>
           </Window>
 
-          {/* Form */}
-          <Window filename="new-message.txt" shadow="md">
-            <form onSubmit={handleSubmit} className="space-y-3">
-              <input
-                name="name"
-                value={formData.name}
-                onChange={handleInputChange}
-                placeholder="Your name"
-                className={field}
-                required
-              />
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleInputChange}
-                placeholder="Your email"
-                className={field}
-                required
-              />
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleInputChange}
-                placeholder="Your message"
-                className={`${field} min-h-32 resize-y`}
-                required
-              />
-              <button type="submit" className="btn-retro btn-solid w-full justify-center">
-                Send message
-              </button>
-            </form>
-          </Window>
         </div>
       </div>
     </section>

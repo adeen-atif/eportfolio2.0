@@ -1,5 +1,4 @@
 import React from 'react';
-import { ExternalLink } from 'lucide-react';
 import SectionHeading from '@/components/retro/SectionHeading';
 import Window from '@/components/retro/Window';
 
@@ -75,22 +74,7 @@ const ExperienceSection = () => {
   return (
     <section id="experience" className="halftone border-b-2 border-black">
       <div className="mx-auto max-w-5xl px-5 sm:px-8 py-14 md:py-20">
-        <SectionHeading
-          size="lg"
-          action={
-            <a
-              href="/Adeen_Atif_Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="link-ul inline-flex items-center gap-1 px-1"
-            >
-              View full resume
-              <ExternalLink className="w-3.5 h-3.5" />
-            </a>
-          }
-        >
-          Experience
-        </SectionHeading>
+        <SectionHeading size="lg">Experience</SectionHeading>
 
         <div className="space-y-6">
           {experiences.map((exp) => (

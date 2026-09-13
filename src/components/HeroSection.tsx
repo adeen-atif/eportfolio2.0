@@ -66,6 +66,9 @@ const HeroSection = () => {
   const scrollToNextSection = () =>
     document.getElementById('quick-links')?.scrollIntoView({ behavior: 'smooth' });
 
+  const scrollToContact = () =>
+    document.getElementById('find-me')?.scrollIntoView({ behavior: 'smooth' });
+
   return (
     <section id="home" className="bg-white border-b-2 border-black">
       <div className="mx-auto max-w-6xl px-5 sm:px-8 py-14 md:py-20">
@@ -98,14 +101,13 @@ const HeroSection = () => {
                 Tap into my world
               </button>
 
-              <a
-                href="/Adeen_Atif_Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
+                onClick={scrollToContact}
                 className="btn-retro btn-solid"
               >
-                Download CV
-              </a>
+                Get in touch
+              </button>
             </div>
           </div>
 

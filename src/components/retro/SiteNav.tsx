@@ -15,7 +15,8 @@ export const HOME_NAV: NavItem[] = [
   { label: 'Experience', id: 'experience' },
   { label: 'Leadership', id: 'leadership' },
   { label: 'Resources', id: 'resources' },
-  { label: 'Blog', to: '/blog' }
+  { label: 'Blog', to: '/blog' },
+  { label: 'Contact', id: 'find-me' }
 ];
 
 interface SiteNavProps {
