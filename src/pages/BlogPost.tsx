@@ -5,8 +5,12 @@ import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { ArrowLeft, Calendar } from 'lucide-react';
+import SiteNav from '@/components/retro/SiteNav';
+import SiteFooter from '@/components/retro/SiteFooter';
+import Window from '@/components/retro/Window';
 
 interface BlogPost {
+  slug: string;
   id: number;
   title: string;
   date: string;
@@ -289,183 +293,165 @@ Would love to hear which pattern you're most excited to build with.`
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
-  const post = blogPosts.find(p => p.slug === slug);
+  const post = blogPosts.find((p) => p.slug === slug);
 
   if (!post) {
     return (
-      <div className="min-h-screen bg-gray-100 text-black font-mono flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">Post not found</h1>
-          <Link 
-            to="/blog" 
-            className="inline-flex items-center bg-black text-white px-4 py-2 border-2 border-black hover:bg-white hover:text-black transition-all duration-200 font-bold"
-          >
-            <ArrowLeft className="mr-2" size={16} />
-            Back to Blog
-          </Link>
+      <div className="min-h-screen bg-white text-black">
+        <SiteNav active="Blog" />
+        <div className="halftone min-h-[60vh] grid place-items-center px-5">
+          <Window filename="404.txt" shadow="lg" className="max-w-sm w-full">
+            <h1 className="display text-2xl">Post not found</h1>
+            <p className="mt-3 text-sm text-neutral-700">
+              That one does not exist, or it moved.
+            </p>
+            <Link to="/blog" className="btn-retro mt-5 text-sm">
+              <ArrowLeft size={16} strokeWidth={2.5} />
+              Back to blog
+            </Link>
+          </Window>
         </div>
+        <SiteFooter />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 text-black font-mono">
-      {/* Navigation */}
-      <nav className="bg-white border-b-2 border-black p-3 md:p-4">
-        <div className="container mx-auto flex justify-between items-center">
-          <Link
-            to="/blog"
-            className="inline-flex items-center text-black hover:underline font-bold text-xs md:text-sm px-1 py-1"
-          >
-            <ArrowLeft className="mr-2" size={16} />
-            Back to Blog
-          </Link>
-          <div className="flex space-x-4 md:space-x-6">
-            <Link
-              to="/"
-              className="text-black hover:underline font-bold text-xs md:text-sm px-1 py-1"
-            >
-              Home
-            </Link>
-            <Link
-              to="/blog"
-              className="text-black hover:underline font-bold text-xs md:text-sm px-1 py-1"
-            >
-              Blog
-            </Link>
-          </div>
-        </div>
-      </nav>
+    <div className="min-h-screen bg-white text-black">
+      <SiteNav active="Blog" />
 
-      {/* Article */}
-      <article className="container mx-auto px-4 md:px-6 py-8 md:py-12 max-w-4xl">
-        {/* Content */}
-        <div className="bg-white border-2 border-black p-6 md:p-8 lg:p-12">
-          {/* Header inside content block */}
-          <header className="mb-8 pb-8 border-b-2 border-gray-200">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-              {post.title}
-            </h1>
-            
-            <div className="flex flex-wrap items-center gap-4 mb-6">
-              <div className="flex items-center text-sm text-gray-600">
-                <Calendar size={16} className="mr-2" />
-                {post.date}
-              </div>
-              
-              {post.tags && (
-                <div className="flex flex-wrap gap-2">
-                  {post.tags.map((tag, index) => (
+      <div className="halftone">
+        <article className="mx-auto max-w-3xl px-5 sm:px-8 py-10 md:py-14">
+          <Link to="/blog" className="btn-retro text-sm mb-8">
+            <ArrowLeft size={16} strokeWidth={2.5} />
+            Back to blog
+          </Link>
+
+          <Window filename={`${post.slug}.md`} shadow="lg">
+            <header className="pb-6 mb-8 border-b-2 border-black">
+              <h1 className="display text-3xl sm:text-4xl lg:text-5xl leading-tight">
+                {post.title}
+              </h1>
+
+              <div className="mt-4 flex flex-wrap items-center gap-3">
+                <span className="chrome inline-flex items-center gap-1.5">
+                  <Calendar size={14} strokeWidth={2.5} />
+                  {post.date}
+                </span>
+
+                {post.tags &&
+                  post.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="text-xs bg-gray-200 text-gray-700 px-3 py-1 border border-gray-400 font-mono"
+                      className="chrome border-2 border-black px-2 py-0.5"
                     >
                       {tag}
                     </span>
                   ))}
-                </div>
-              )}
-            </div>
-          </header>
+              </div>
+            </header>
 
-          <div className="prose prose-lg max-w-none markdown-content">
-            <ReactMarkdown
-              components={{
-                code({ className, children, ...props }: any) {
-                  const match = /language-(\w+)/.exec(className || '');
-                  const isCodeBlock = className && className.includes('language-');
-                  return isCodeBlock ? (
-                    <div className="my-6">
-                      <SyntaxHighlighter
-                        style={tomorrow}
-                        language={match[1]}
-                        customStyle={{
-                          borderRadius: '0px',
-                          border: '2px solid black',
-                          fontSize: '14px',
-                          fontFamily: 'monospace'
-                        }}
+            <div className="markdown-content">
+              <ReactMarkdown
+                components={{
+                  code({ className, children, ...props }: any) {
+                    const match = /language-(\w+)/.exec(className || '');
+                    const isCodeBlock =
+                      className && className.includes('language-');
+                    return isCodeBlock ? (
+                      <div className="my-6 overflow-x-auto">
+                        <SyntaxHighlighter
+                          style={tomorrow}
+                          language={match[1]}
+                          customStyle={{
+                            borderRadius: '0px',
+                            border: '2px solid #000',
+                            background: '#f7f7f7',
+                            fontSize: '13px',
+                            fontFamily: '"IBM Plex Mono", monospace'
+                          }}
+                          {...props}
+                        >
+                          {String(children).replace(/\n$/, '')}
+                        </SyntaxHighlighter>
+                      </div>
+                    ) : (
+                      <code
+                        className="bg-chrome border-2 border-black px-1.5 py-0.5 text-[13px] font-mono"
                         {...props}
                       >
-                        {String(children).replace(/\n$/, '')}
-                      </SyntaxHighlighter>
-                    </div>
-                  ) : (
-                    <code
-                      className="bg-gray-200 px-1 py-0.5 border border-black text-sm font-mono"
-                      {...props}
+                        {children}
+                      </code>
+                    );
+                  },
+                  h1: ({ children }) => (
+                    <h2 className="display text-2xl sm:text-3xl mt-12 mb-4 pb-2 border-b-2 border-black">
+                      {children}
+                    </h2>
+                  ),
+                  h2: ({ children }) => (
+                    <h2 className="display text-xl sm:text-2xl mt-10 mb-3">
+                      {children}
+                    </h2>
+                  ),
+                  h3: ({ children }) => (
+                    <h3 className="display text-lg sm:text-xl mt-8 mb-3">
+                      {children}
+                    </h3>
+                  ),
+                  p: ({ children }) => (
+                    <p className="text-[15px] sm:text-base leading-relaxed mb-5 text-neutral-800">
+                      {children}
+                    </p>
+                  ),
+                  ul: ({ children }) => (
+                    <ul className="mb-5 space-y-2 list-disc pl-5 text-[15px] text-neutral-800">
+                      {children}
+                    </ul>
+                  ),
+                  ol: ({ children }) => (
+                    <ol className="mb-5 space-y-2 list-decimal pl-5 text-[15px] text-neutral-800">
+                      {children}
+                    </ol>
+                  ),
+                  li: ({ children }) => (
+                    <li className="leading-relaxed">{children}</li>
+                  ),
+                  blockquote: ({ children }) => (
+                    <blockquote className="border-l-4 border-black pl-4 my-6 text-neutral-700 italic">
+                      {children}
+                    </blockquote>
+                  ),
+                  strong: ({ children }) => (
+                    <strong className="font-bold text-black">{children}</strong>
+                  ),
+                  a: ({ href, children }) => (
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="link-ul font-semibold px-0.5"
                     >
                       {children}
-                    </code>
-                  );
-                },
-                h1: ({ children }) => (
-                  <h1 className="text-3xl md:text-4xl font-bold mb-6 mt-8 border-b-2 border-black pb-2">
-                    {children}
-                  </h1>
-                ),
-                h2: ({ children }) => (
-                  <h2 className="text-2xl md:text-3xl font-bold mb-4 mt-8">
-                    {children}
-                  </h2>
-                ),
-                h3: ({ children }) => (
-                  <h3 className="text-xl md:text-2xl font-bold mb-4 mt-6">
-                    {children}
-                  </h3>
-                ),
-                p: ({ children }) => (
-                  <p className="text-base md:text-lg leading-relaxed mb-6 text-gray-800">
-                    {children}
-                  </p>
-                ),
-                strong: ({ children }) => (
-                  <strong className="font-bold text-black">
-                    {children}
-                  </strong>
-                ),
-                a: ({ href, children }) => (
-                  <a
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-black font-bold underline hover:bg-black hover:text-white transition-colors duration-200 px-1"
-                  >
-                    {children}
-                  </a>
-                ),
-              }}
-            >
-              {post.content}
-            </ReactMarkdown>
-          </div>
-        </div>
-
-        {/* Footer */}
-        <footer className="bg-white border-2 border-black border-t-0 p-6 md:p-8">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-            <div>
-              <p className="text-sm text-gray-600 mb-2">
-                Hope you had fun reading!
-              </p>
+                    </a>
+                  )
+                }}
+              >
+                {post.content}
+              </ReactMarkdown>
             </div>
-            
-            <Link
-              to="/blog"
-              className="inline-flex items-center bg-black text-white px-4 py-2 border-2 border-black hover:bg-white hover:text-black transition-all duration-200 font-bold text-sm"
-            >
-              More Posts →
-            </Link>
-          </div>
-        </footer>
-      </article>
 
-      {/* Footer */}
-      <footer className="bg-black text-white py-6 md:py-8 px-4 md:px-6 mt-12">
-        <div className="container mx-auto text-center">
-          <p className="text-sm md:text-base">© 2024 Adeen Atif. All rights reserved.</p>
-        </div>
-      </footer>
+            <footer className="mt-10 pt-6 border-t-2 border-black flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <p className="chrome">Hope you had fun reading</p>
+              <Link to="/blog" className="btn-retro text-sm">
+                More posts
+              </Link>
+            </footer>
+          </Window>
+        </article>
+      </div>
+
+      <SiteFooter />
     </div>
   );
 };
