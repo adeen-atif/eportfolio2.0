@@ -18,13 +18,20 @@ const LABEL: Record<string, string> = {
 
 const ORDER = ['SA', 'PK', 'US', 'DE', 'GB'];
 
-/** Affiliated projects per country, shown when you hover the map itself. */
-const PROJECTS: Record<string, number> = {
+/** Affiliated organisations per country, shown when you hover the map. */
+const AFFILIATIONS: Record<string, number> = {
   SA: 40,
   PK: 4,
   US: 3,
   DE: 2,
   GB: 1
+};
+
+/** Germany and the UK sit ~30 units apart, so their tags need pushing
+ *  off the centroid. The connector line keeps them readable. */
+const TAG_OFFSET: Record<string, [number, number]> = {
+  GB: [-36, -14],
+  DE: [32, 4]
 };
 
 interface Stat {
@@ -52,7 +59,7 @@ const STATS: Stat[] = [
     places: ORDER,
     lead: ['SA', 'PK', 'GB']
   },
-  { number: '50+', label: 'Org Affiliations' },
+  { number: '50+', label: 'Org Affiliations', counts: AFFILIATIONS },
   {
     number: '25+',
     label: 'Events Led',
@@ -63,7 +70,8 @@ const STATS: Stat[] = [
 const placesOf = (s: Stat) =>
   s.places ?? (s.counts ? Object.keys(s.counts) : []);
 
-const projects = (n: number) => `${n} project${n === 1 ? '' : 's'}`;
+const affiliations = (n: number) =>
+  `${n} affiliation${n === 1 ? '' : 's'}`;
 
 type Hover =
   | { kind: 'country'; code: string }
@@ -104,7 +112,7 @@ const WorldMap = () => {
             className="w-full h-auto"
             role="img"
             aria-label={`World map marking ${ORDER.length} countries: ${ORDER.map(
-              (k) => `${LABEL[k]}, ${projects(PROJECTS[k])}`
+              (k) => `${LABEL[k]}, ${affiliations(AFFILIATIONS[k])}`
             ).join('; ')}.`}
           >
             <defs>
@@ -141,7 +149,7 @@ const WorldMap = () => {
                   d={geo.d}
                   tabIndex={0}
                   role="button"
-                  aria-label={`${LABEL[code]}: ${projects(PROJECTS[code])}`}
+                  aria-label={`${LABEL[code]}: ${affiliations(AFFILIATIONS[code])}`}
                   onMouseEnter={() => setHover({ kind: 'country', code })}
                   onMouseLeave={() => setHover(null)}
                   onFocus={() => setHover({ kind: 'country', code })}
@@ -195,13 +203,22 @@ const WorldMap = () => {
                 if (!geo) return null;
                 const w = 52;
                 const h = 30;
+                const [dx, dy] = TAG_OFFSET[code] ?? [0, 0];
                 const x = Math.min(
-                  Math.max(geo.c[0] - w / 2, 4),
+                  Math.max(geo.c[0] + dx - w / 2, 4),
                   MAP_WIDTH - w - 4
                 );
-                const y = Math.max(geo.c[1] - 22 - h, 4);
+                const y = Math.max(geo.c[1] + dy - 22 - h, 4);
                 return (
                   <g key={`tag-${code}`} pointerEvents="none">
+                    <line
+                      x1={geo.c[0]}
+                      y1={geo.c[1]}
+                      x2={x + w / 2}
+                      y2={y + h}
+                      stroke="#000"
+                      strokeWidth="2"
+                    />
                     <rect x={x + 4} y={y + 4} width={w} height={h} fill="#000" />
                     <rect
                       x={x}
@@ -271,14 +288,14 @@ const WorldMap = () => {
                   fontWeight="600"
                   fill="#000"
                 >
-                  {projects(PROJECTS[country as string])}
+                  {affiliations(AFFILIATIONS[country as string])}
                 </text>
               </g>
             )}
           </svg>
 
           <p className="chrome mt-3 flex flex-wrap items-baseline justify-between gap-x-3">
-            <span>50 projects · 5 countries</span>
+            <span>50 affiliations · 5 countries</span>
             <span className="text-neutral-600">
               {stat ? stat.label : 'Hover a country, or a stat'}
             </span>
