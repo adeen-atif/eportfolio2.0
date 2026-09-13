@@ -56,15 +56,18 @@ const HeroSection = () => {
     setCurrentWindow((prev) => (prev + 1) % windowStates.length);
 
   const scrollToNextSection = () =>
-    document.getElementById('quick-links')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
 
   const scrollToContact = () =>
     document.getElementById('find-me')?.scrollIntoView({ behavior: 'smooth' });
 
   return (
-    <section id="home" className="bg-white border-b-2 border-black">
-      <div className="mx-auto max-w-6xl px-5 sm:px-8 py-14 md:py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-10 lg:gap-14 items-center">
+    <section
+      id="home"
+      className="bg-white border-b-2 border-black min-h-[calc(100svh-3.5rem)] flex flex-col"
+    >
+      <div className="flex-1 flex items-center w-full mx-auto max-w-6xl px-5 sm:px-8 py-12 md:py-16">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-10 lg:gap-14 items-center">
           {/* Copy */}
           <div>
             <h1 className="display text-5xl sm:text-6xl lg:text-7xl">
@@ -144,16 +147,17 @@ const HeroSection = () => {
           </div>
         </div>
 
-        <div className="mt-12 flex justify-center">
-          <button
-            type="button"
-            onClick={scrollToNextSection}
-            aria-label="Scroll to the next section"
-            className="w-10 h-10 border-2 border-black bg-white hard grid place-items-center hover:bg-black hover:text-white transition-colors"
-          >
-            <ChevronDown className="w-5 h-5" strokeWidth={2.5} />
-          </button>
-        </div>
+      </div>
+
+      <div className="pb-8 sm:pb-10 flex justify-center">
+        <button
+          type="button"
+          onClick={scrollToNextSection}
+          aria-label="Scroll to the next section"
+          className="w-10 h-10 border-2 border-black bg-white hard grid place-items-center hover:bg-black hover:text-white transition-colors"
+        >
+          <ChevronDown className="w-5 h-5" strokeWidth={2.5} />
+        </button>
       </div>
     </section>
   );

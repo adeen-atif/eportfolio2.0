@@ -4,14 +4,6 @@ import Window from '@/components/retro/Window';
 import WorldMap from '@/components/retro/WorldMap';
 
 const AboutSection = () => {
-  const stats = [
-    { number: '19', label: 'AI Projects Shipped' },
-    { number: '98%', label: 'Avg Model Accuracy' },
-    { number: '4 yrs', label: 'AI & Product Experience' },
-    { number: '1,000+', label: 'Students Taught' },
-    { number: '50+', label: 'Org Affiliations' },
-    { number: '25+', label: 'Events Led' }
-  ];
 
   return (
     <section
@@ -53,22 +45,10 @@ const AboutSection = () => {
           </div>
         </Window>
 
-        <div className="mt-10 grid grid-cols-2 md:grid-cols-3 border-t-2 border-l-2 border-black hard-lg bg-white">
-          {stats.map((stat) => (
-            <div
-              key={stat.label}
-              className="border-r-2 border-b-2 border-black p-5 sm:p-6 text-center hover:bg-black hover:text-white transition-colors duration-150"
-            >
-              <div className="display text-2xl sm:text-3xl">{stat.number}</div>
-              <div className="mt-1 chrome">{stat.label}</div>
-            </div>
-          ))}
-        </div>
-
         <div className="mt-10">
           <h3 className="display text-xl sm:text-2xl">Where the work has landed</h3>
           <p className="chrome mt-1 mb-5">
-            50 projects across five countries
+            Hover a number to see the countries behind it
           </p>
           <WorldMap />
         </div>
