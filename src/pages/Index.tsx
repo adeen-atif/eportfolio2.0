@@ -1,81 +1,70 @@
-
 import React from 'react';
-import { Link } from 'react-router-dom';
 import HeroSection from '@/components/HeroSection';
 import QuickLinksSection from '@/components/QuickLinksSection';
 import AboutSection from '@/components/AboutSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import ExperienceSection from '@/components/ExperienceSection';
 import LeadershipSection from '@/components/LeadershipSection';
-import ToolsSection from '@/components/ToolsSection';
 import ResourcesSection from '@/components/ResourcesSection';
 import ContactSection from '@/components/ContactSection';
+import SiteNav from '@/components/system/SiteNav';
+import SiteFooter from '@/components/system/SiteFooter';
+import GlitchIntro from '@/components/system/GlitchIntro';
+import ConnectorLine from '@/components/system/ConnectorLine';
+import VelocityDriver from '@/components/system/VelocityDriver';
+import ProgressBar from '@/components/system/ProgressBar';
+import SectionNav from '@/components/system/SectionNav';
+import useActiveSection from '@/components/system/useActiveSection';
+
+const SECTIONS = [
+  { id: 'about', label: 'About' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'experience', label: 'Experience' },
+  { id: 'leadership', label: 'Leadership' },
+  { id: 'resources', label: 'Resources' },
+  { id: 'contact', label: 'Contact' }
+];
+
+const ROUTES = [{ label: 'Blog', to: '/blog' }];
 
 const Index = () => {
+  const activeId = useActiveSection(SECTIONS.map((s) => s.id));
+
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 text-black font-mono">
-      {/* Navigation */}
-      <nav className="bg-white border-b-2 border-black p-3 md:p-4">
-        <div className="container mx-auto flex justify-center items-center">
-          <div className="flex flex-wrap justify-center space-x-2 md:space-x-8 gap-y-2">
-            {['About', 'Projects', 'Experience', 'Leadership', 'Tools', 'Resources'].map((item) => (
+    <div className="min-h-screen bg-ink text-white font-mono overflow-x-hidden">
+      <GlitchIntro />
+      <VelocityDriver />
+      <ProgressBar />
+      <SectionNav sections={SECTIONS} activeId={activeId} routes={ROUTES} />
 
+      <SiteNav activeId={activeId} />
 
-              <button
-                key={item}
-                onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-'))}
-                className="text-black hover:underline font-bold text-xs md:text-sm px-1 py-1"
-              >
-                {item}
-              </button>
-            ))}
-            <Link
-              to="/blog"
-              className="text-black hover:underline font-bold text-xs md:text-sm px-1 py-1"
-            >
-              Blog
-            </Link>
-          </div>
-        </div>
-      </nav>
-
-      {/* Hero Section with macOS Window */}
       <HeroSection />
-
-      {/* Quick Links */}
       <QuickLinksSection scrollToSection={scrollToSection} />
 
-      {/* About Section */}
+      <ConnectorLine variant="kink-right" height={120} />
       <AboutSection />
 
-      {/* Projects Section */}
+      <ConnectorLine variant="kink-left" height={120} />
       <ProjectsSection />
 
-      {/* Experience Section */}
+      <ConnectorLine variant="straight" height={110} />
       <ExperienceSection />
 
-      {/* Leadership Section */}
+      <ConnectorLine variant="kink-right" height={120} />
       <LeadershipSection />
 
-      {/* Tools Section */}
-      <ToolsSection />
-
-      {/* Resources Section */}
+      <ConnectorLine variant="kink-left" height={110} />
       <ResourcesSection />
 
-      {/* Contact Section */}
+      <ConnectorLine variant="branch" height={140} />
       <ContactSection />
 
-      {/* Footer */}
-      <footer className="bg-black text-white py-6 md:py-8 px-4 md:px-6">
-        <div className="container mx-auto text-center">
-          <p className="text-sm md:text-base">© 2024 Adeen Atif. All rights reserved.</p>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 };

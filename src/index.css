@@ -1,90 +1,76 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* ------------------------------------------------------------------
+   Design system: terminal / orbital
+   Background  #12151D   Accent  #7D12FF
+   Text        #FFFFFF   Muted   #4A4D57
+   All shadcn tokens below are HSL so existing UI primitives inherit it.
+------------------------------------------------------------------- */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 222 25% 9%;        /* #12151D */
+    --foreground: 0 0% 100%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 222 22% 12%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 222 25% 9%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 265 100% 54%;         /* #7D12FF */
+    --primary-foreground: 0 0% 0%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 226 8% 31%;         /* #4A4D57 */
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 226 12% 18%;
+    --muted-foreground: 226 8% 65%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 265 100% 54%;
+    --accent-foreground: 0 0% 0%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 226 8% 31%;
+    --input: 226 8% 31%;
+    --ring: 265 100% 54%;
 
-    --radius: 0.5rem;
+    --radius: 0rem;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 222 25% 9%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 265 100% 54%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 226 12% 18%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 226 8% 31%;
+    --sidebar-ring: 265 100% 54%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 222 25% 9%;
+    --foreground: 0 0% 100%;
+    --card: 222 22% 12%;
+    --card-foreground: 0 0% 100%;
+    --popover: 222 25% 9%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 265 100% 54%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 226 8% 31%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 226 12% 18%;
+    --muted-foreground: 226 8% 65%;
+    --accent: 265 100% 54%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 62% 31%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 226 8% 31%;
+    --input: 226 8% 31%;
+    --ring: 265 100% 54%;
   }
 }
 
@@ -93,38 +79,175 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
-    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    @apply bg-ink text-white;
+    font-family: 'Space Mono', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: #7d12ff;
+    color: #000;
   }
 }
 
-/* Custom Scrollbar Styling */
+/* ------------------------------------------------------------------
+   Typography helpers
+------------------------------------------------------------------- */
+
+.display {
+  font-family: 'Space Grotesk', 'Space Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  line-height: 0.95;
+}
+
+.tag {
+  font-family: 'Space Mono', monospace;
+  color: #7d12ff;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+}
+
+/* ------------------------------------------------------------------
+   Nav / interactive primitives. Instant toggles, no fade, per spec.
+------------------------------------------------------------------- */
+
+.nav-link {
+  border: 1px solid transparent;
+  padding: 0.25rem 0.65rem;
+  transition: none;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible,
+.nav-link[data-active='true'] {
+  border-color: #7d12ff;
+  color: #fff;
+  outline: none;
+}
+
+.fill-hover {
+  transition: none;
+}
+
+.fill-hover:hover {
+  background: #7d12ff;
+  color: #000;
+}
+
+/* ------------------------------------------------------------------
+   Initial-load glitch: RGB split + block displacement
+------------------------------------------------------------------- */
+
+@keyframes glitch-shift {
+  0%   { transform: translate3d(0, 0, 0); clip-path: inset(0 0 0 0); }
+  12%  { transform: translate3d(-14px, 0, 0); clip-path: inset(14% 0 62% 0); }
+  24%  { transform: translate3d(18px, 0, 0); clip-path: inset(68% 0 12% 0); }
+  36%  { transform: translate3d(-8px, 0, 0); clip-path: inset(38% 0 44% 0); }
+  48%  { transform: translate3d(10px, 0, 0); clip-path: inset(8% 0 80% 0); }
+  60%  { transform: translate3d(-4px, 0, 0); clip-path: inset(52% 0 30% 0); }
+  72%  { transform: translate3d(3px, 0, 0); clip-path: inset(24% 0 68% 0); }
+  100% { transform: translate3d(0, 0, 0); clip-path: inset(0 0 0 0); }
+}
+
+@keyframes glitch-rgb {
+  0%   { text-shadow: -4px 0 #7d12ff, 4px 0 #00e5ff; opacity: 1; }
+  40%  { text-shadow: 5px 0 #7d12ff, -5px 0 #00e5ff; opacity: 1; }
+  70%  { text-shadow: -2px 0 #7d12ff, 2px 0 #00e5ff; opacity: 1; }
+  100% { text-shadow: none; opacity: 1; }
+}
+
+@keyframes glitch-curtain {
+  0%   { opacity: 1; }
+  70%  { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; }
+}
+
+@keyframes glitch-bar {
+  0%   { transform: translateY(-100%) scaleY(3); opacity: 0.9; }
+  50%  { transform: translateY(40vh) scaleY(1); opacity: 0.55; }
+  100% { transform: translateY(120vh) scaleY(6); opacity: 0; }
+}
+
+.glitch-layer {
+  animation: glitch-shift 0.72s steps(2, end) 1 both;
+}
+
+.glitch-text {
+  animation: glitch-rgb 0.72s steps(2, end) 1 both;
+}
+
+.glitch-curtain {
+  animation: glitch-curtain 0.9s linear 1 both;
+}
+
+.glitch-bar {
+  animation: glitch-bar 0.9s linear 1 both;
+}
+
+/* ------------------------------------------------------------------
+   Orbit
+------------------------------------------------------------------- */
+
+@keyframes orbit {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.orbit-slow   { animation: orbit 14s linear infinite; }
+.orbit-medium { animation: orbit 9s linear infinite; }
+.orbit-fast   { animation: orbit 6s linear infinite; }
+.orbit-reverse { animation: orbit 18s linear infinite reverse; }
+
+/* ------------------------------------------------------------------
+   Caret for the typewriter headings
+------------------------------------------------------------------- */
+
+@keyframes caret {
+  0%, 45%   { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.caret {
+  animation: caret 0.9s steps(1, end) infinite;
+}
+
+/* ------------------------------------------------------------------
+   Scrollbar
+------------------------------------------------------------------- */
+
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-left: 1px solid #000;
+  background: #12151d;
+  border-left: 1px solid #4a4d57;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #000;
+  background: #7d12ff;
   border-radius: 0;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #333;
+  background: #9b4dff;
 }
 
-/* Firefox scrollbar */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #000 #f1f1f1;
+  scrollbar-color: #7d12ff #12151d;
 }
 
-/* Hide scrollbar utility */
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -134,76 +257,133 @@ All colors MUST be HSL.
   display: none;
 }
 
-/* Retro Mac Aesthetic */
-.retro-window {
-  background: white;
-  border: 2px solid black;
-  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
+/* ------------------------------------------------------------------
+   Scroll-reactive motion.
+   VelocityDriver writes --vel, --dir, --spin and --prog on :root each
+   frame; everything below reads them, so no JS touches these elements.
+------------------------------------------------------------------- */
+
+:root {
+  --vel: 0;
+  --dir: 1;
+  --spin: 0;
+  --prog: 0;
 }
 
-.retro-button {
-  background: white;
-  border: 2px solid black;
-  transition: all 0.2s ease;
+/* Headings smear and split apart the faster you scroll. */
+.velocity-head {
+  transform: skewY(calc(var(--vel) * var(--dir) * -0.9deg));
+  text-shadow:
+    calc(var(--vel) * -7px) 0 rgba(125, 18, 255, calc(var(--vel) * 0.9)),
+    calc(var(--vel) * 7px) 0 rgba(0, 229, 255, calc(var(--vel) * 0.55));
+  will-change: transform;
 }
 
-.retro-button:hover {
-  background: black;
-  color: white;
-  transform: translate(-2px, -2px);
-  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
+/* Rules and spines brighten with speed. */
+.velocity-rule {
+  background: linear-gradient(
+    to right,
+    rgba(125, 18, 255, calc(0.25 + var(--vel) * 0.75)),
+    rgba(74, 77, 87, 0.35)
+  );
 }
 
-/* Browser Window Dots */
-.browser-dots {
-  display: flex;
-  gap: 4px;
+/* Orbital tracks driven by scroll position instead of a timer. */
+.orbit-scroll {
+  transform: rotate(calc(var(--spin) * 1deg));
+  will-change: transform;
 }
 
-.dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
+.orbit-scroll-reverse {
+  transform: rotate(calc(var(--spin) * -0.6deg));
+  will-change: transform;
 }
 
-.dot-red { background-color: #ff5f57; }
-.dot-yellow { background-color: #ffbd2e; }
-.dot-green { background-color: #28ca42; }
-
-/* Smooth scroll behavior */
-html {
-  scroll-behavior: smooth;
+/* Page-progress bar pinned to the top edge. */
+.progress-bar {
+  transform: scaleX(var(--prog));
+  transform-origin: left center;
 }
 
-/* Monospace typography adjustments */
-.font-mono {
-  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-  letter-spacing: -0.025em;
+/* Staggered row reveal. Rows start offset and settle as they enter. */
+.reveal-row {
+  opacity: 0;
+  transform: translate3d(0, 18px, 0);
+  clip-path: inset(0 100% 0 0);
 }
 
-/* Retro hover effects */
-.hover-lift:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.reveal-row.is-in {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  clip-path: inset(0 0 0 0);
+  transition:
+    opacity 420ms linear,
+    transform 420ms cubic-bezier(0.2, 0.7, 0.3, 1),
+    clip-path 520ms cubic-bezier(0.2, 0.7, 0.3, 1);
 }
 
-/* Custom underline animation */
-.underline-hover {
-  position: relative;
-  text-decoration: none;
+/* Active entry in the experience spine. */
+.spine-entry {
+  opacity: 0.55;
+  transition: opacity 200ms linear;
 }
 
-.underline-hover::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -2px;
-  left: 0;
-  background-color: black;
-  transition: width 0.3s ease;
+.spine-entry.is-active {
+  opacity: 1;
 }
 
-.underline-hover:hover::after {
-  width: 100%;
+.spine-dot {
+  border-color: #4a4d57;
+  transition: border-color 200ms linear, box-shadow 200ms linear;
+}
+
+.spine-entry.is-active .spine-dot {
+  border-color: #7d12ff;
+  box-shadow: 0 0 0 4px rgba(125, 18, 255, 0.16);
+}
+
+/* ------------------------------------------------------------------
+   Grid backdrop used behind the hero and footer
+------------------------------------------------------------------- */
+
+.grid-backdrop {
+  background-image:
+    linear-gradient(to right, rgba(74, 77, 87, 0.18) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(74, 77, 87, 0.18) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glitch-layer,
+  .glitch-text,
+  .glitch-curtain,
+  .glitch-bar,
+  .orbit-slow,
+  .orbit-medium,
+  .orbit-fast,
+  .orbit-reverse,
+  .caret {
+    animation: none !important;
+  }
+
+  .velocity-head,
+  .orbit-scroll,
+  .orbit-scroll-reverse {
+    transform: none !important;
+    text-shadow: none !important;
+  }
+
+  .reveal-row {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+
+  .spine-entry {
+    opacity: 1 !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
 }

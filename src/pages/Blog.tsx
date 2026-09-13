@@ -1,8 +1,13 @@
 
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import SiteNav, { NavItem } from '@/components/system/SiteNav';
+import SiteFooter from '@/components/system/SiteFooter';
+import TypeHeading from '@/components/system/TypeHeading';
+import { ArrowRight } from 'lucide-react';
 
 interface BlogPost {
+  slug: string;
   id: number;
   title: string;
   date: string;
@@ -278,94 +283,76 @@ Would love to hear which pattern you're most excited to build with.`,
 
 const Blog = () => {
   const navigate = useNavigate();
-  return (
-    <div className="min-h-screen bg-gray-100 text-black font-mono">
-      {/* Navigation */}
-      <nav className="bg-white border-b-2 border-black p-3 md:p-4">
-        <div className="container mx-auto flex justify-center items-center">
-          <div className="flex flex-wrap justify-center space-x-2 md:space-x-8 gap-y-2">
-            <Link
-              to="/"
-              className="text-black hover:underline font-bold text-xs md:text-sm px-1 py-1"
-            >
-              Home
-            </Link>
-            <span className="text-black font-bold text-xs md:text-sm px-1 py-1 underline">
-              Blog
-            </span>
-          </div>
-        </div>
-      </nav>
 
-      {/* Header */}
-      <div className="bg-white border-b-2 border-black py-8 md:py-12">
-        <div className="container mx-auto px-4 md:px-6 text-center">
-          <h1 className="text-3xl md:text-4xl font-bold mb-2">Blog</h1>
-          <p className="text-sm md:text-base text-gray-600">
+  return (
+    <div className="min-h-screen bg-ink text-white font-mono overflow-x-hidden">
+      <SiteNav active="Blog" />
+
+      <header className="px-5 sm:px-8 lg:px-12 pt-16 pb-10">
+        <div className="mx-auto max-w-4xl">
+          <TypeHeading text="Blog" tag="h1" as="h1" />
+          <p className="mt-6 font-mono text-sm text-white/55">
+            <span className="text-neon">&lt;p&gt;</span>
             Thoughts, insights, and experiences from my journey
+            <span className="text-neon">&lt;/p&gt;</span>
+          </p>
+        </div>
+      </header>
+
+      <div className="px-5 sm:px-8 lg:px-12 pb-16">
+        <div className="mx-auto max-w-4xl border-t border-steel/60">
+          {blogPosts.map((post) => (
+            <article key={post.id}>
+              <button
+                type="button"
+                onClick={() => navigate(`/blog/${post.slug}`)}
+                className="group fill-hover w-full text-left border-b border-steel/60 px-4 sm:px-6 py-7 sm:py-9"
+              >
+                <div className="flex items-start gap-5 sm:gap-6">
+                  <span className="flex-1 min-w-0">
+                    <span className="display block text-lg sm:text-2xl md:text-3xl leading-tight">
+                      {post.title}
+                    </span>
+
+                    <span className="block mt-3 font-mono text-xs sm:text-sm text-white/60 group-hover:text-black/70 leading-relaxed">
+                      {post.excerpt}
+                    </span>
+
+                    {post.tags && (
+                      <span className="mt-4 flex flex-wrap gap-2">
+                        {post.tags.map((tag, index) => (
+                          <span
+                            key={index}
+                            className="border border-steel group-hover:border-black/40 px-2.5 py-0.5 font-mono text-[10px] tracking-widest"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </span>
+                    )}
+
+                    <span className="block mt-3 font-mono text-[11px] tracking-widest opacity-0 max-h-0 overflow-hidden group-hover:opacity-100 group-hover:max-h-6 text-black/70">
+                      {post.date}
+                    </span>
+                  </span>
+
+                  <ArrowRight
+                    className="w-7 h-7 sm:w-8 sm:h-8 shrink-0 mt-1"
+                    strokeWidth={1.25}
+                  />
+                </div>
+              </button>
+            </article>
+          ))}
+
+          <p className="py-10 text-center font-mono text-xs tracking-widest text-white/45">
+            <span className="text-neon">//</span> More Interesting Stuff Coming
+            Soon!
           </p>
         </div>
       </div>
 
-      {/* Blog Posts */}
-      <div className="container mx-auto px-4 md:px-6 py-8 md:py-12">
-        <div className="max-w-3xl mx-auto space-y-8 md:space-y-12">
-          {blogPosts.map((post) => (
-            <article
-              key={post.id}
-              className="bg-white border-2 border-black p-6 md:p-8 transition-all duration-300 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-4px] hover:translate-y-[-4px] cursor-pointer group"
-              onClick={() => navigate(`/blog/${post.slug}`)}
-            >
-              <header className="mb-4">
-                <h2 className="text-xl md:text-2xl font-bold mb-2 group-hover:underline transition-all duration-200">
-                  {post.title}
-                </h2>
-                <div className="flex flex-wrap items-center gap-4 mb-4">
-                  <time className="text-sm text-gray-600 font-mono">
-                    {post.date}
-                  </time>
-                  {post.tags && (
-                    <div className="flex flex-wrap gap-2">
-                      {post.tags.map((tag, index) => (
-                        <span
-                          key={index}
-                          className="text-xs bg-gray-200 text-gray-700 px-2 py-1 border border-gray-300 font-mono"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              </header>
-              
-              <div className="prose prose-sm md:prose-base max-w-none">
-                <p className="text-sm md:text-base text-gray-700 mb-4">
-                  {post.excerpt}
-                </p>
-              </div>
-              
-              <footer className="mt-6 pt-4 border-t border-gray-200">
-                <div className="inline-flex items-center bg-black text-white px-4 py-2 border-2 border-black hover:bg-white hover:text-black transition-all duration-200 font-bold text-xs md:text-sm group-hover:translate-x-[2px] group-hover:translate-y-[2px]">
-                  Read more →
-                </div>
-              </footer>
-            </article>
-          ))}
-          
-          {/* Coming Soon Message */}
-          <div className="text-center py-8">
-            <p className="text-gray-600">More Interesting Stuff Coming Soon!</p>
-          </div>
-        </div>
-      </div>
-
-      {/* Footer */}
-      <footer className="bg-black text-white py-6 md:py-8 px-4 md:px-6">
-        <div className="container mx-auto text-center">
-          <p className="text-sm md:text-base">© 2024 Adeen Atif. All rights reserved.</p>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 };

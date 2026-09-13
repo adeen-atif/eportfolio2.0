@@ -1,31 +1,17 @@
-
 import React, { useState } from 'react';
-import { Github, Linkedin, Instagram, Mail, Phone, MapPin, Calendar } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
+import { Github, Linkedin, Instagram, Mail, MapPin, Calendar } from 'lucide-react';
+import TypeHeading from '@/components/system/TypeHeading';
+import SocialBubble from '@/components/system/SocialBubble';
+import ParallaxNumeral from '@/components/system/ParallaxNumeral';
 
 const ContactSection = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
-  const handleScheduleMeeting = () => {
-    window.open('https://cal.com/adeen-atif-pcnb4e/15min', '_blank');
-  };
-
-  const handleSocialClick = (url: string) => {
-    window.open(url, '_blank');
-  };
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -33,113 +19,130 @@ const ContactSection = () => {
     const { name, email, message } = formData;
     const subject = `Message from ${name}`;
     const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
-    const mailtoLink = `mailto:adynatif@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailtoLink;
+    window.location.href = `mailto:adynatif@gmail.com?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
   };
 
+  const field =
+    'w-full bg-transparent border border-steel px-4 py-3 font-mono text-sm text-white placeholder:text-white/35 focus:outline-none focus:border-neon';
+
   return (
-    <section id="find-me" className="py-12 md:py-20 px-4 md:px-6">
-      <div className="container mx-auto max-w-4xl">
-        <h2 className="text-3xl md:text-4xl font-black mb-8 md:mb-12 text-center">Let's Talk</h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-          {/* Contact Info */}
-          <div className="space-y-6">
-            <div className="flex items-center space-x-4">
-              <MapPin className="h-5 w-5 md:h-6 md:w-6 flex-shrink-0" />
+    <section
+      id="contact"
+      className="relative px-5 sm:px-8 lg:px-12 py-16 md:py-24 overflow-hidden"
+    >
+      <ParallaxNumeral index="06" side="left" />
+
+      <div className="relative mx-auto max-w-6xl">
+        <TypeHeading text="Connect with me" tag="h2" />
+
+        <div className="mt-14 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+          {/* Coordinates */}
+          <div className="space-y-8">
+            <div className="flex items-start gap-4">
+              <MapPin className="w-5 h-5 mt-1 text-neon shrink-0" />
               <div>
-                <h3 className="font-black">LOCATION</h3>
-                <p className="text-sm md:text-base">Karachi, Pakistan</p>
-                <p className="text-sm md:text-base">Riyadh, Saudi Arabia</p>
+                <h3 className="font-mono text-[11px] tracking-widest uppercase text-white/50">
+                  Location
+                </h3>
+                <p className="mt-1 font-mono text-sm text-white">
+                  Karachi, Pakistan
+                </p>
+                <p className="font-mono text-sm text-white">
+                  Riyadh, Saudi Arabia
+                </p>
               </div>
             </div>
 
-            <div className="flex items-center space-x-4">
-              <Mail className="h-5 w-5 md:h-6 md:w-6 flex-shrink-0" />
+            <div className="flex items-start gap-4">
+              <Mail className="w-5 h-5 mt-1 text-neon shrink-0" />
               <div>
-                <h3 className="font-black">EMAIL</h3>
-                <p className="text-xs md:text-sm">adynatif@gmail.com</p>
-              </div>
-            </div>
-
-{/*             <div className="flex items-center space-x-4">
-              <Phone className="h-5 w-5 md:h-6 md:w-6 flex-shrink-0" />
-              <div>
-                <h3 className="font-black">PHONE</h3>
-                <p className="text-sm md:text-base">(+92) 316 848 9996</p>
-                <p className="text-sm md:text-base">(+966) 54 184 4255</p>
-              </div>
-            </div> */}
-
-            {/* Schedule Meeting Button - Left Aligned */}
-            <div className="pt-4 flex justify-start">
-              <Button 
-                onClick={handleScheduleMeeting}
-                className="bg-black text-white hover:bg-gray-800 font-bold text-sm px-6 py-3 border-2 border-black hover:shadow-[4px_4px_0px_rgba(0,0,0,0.25)] hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-2"
-              >
-                <Calendar className="h-4 w-4" />
-                Online Coffee Chat? Book a Slot!
-              </Button>
-            </div>
-
-            <div className="flex space-x-4 pt-4">
-              {[
-                { icon: Github, label: "GITHUB", url: "https://github.com/adeen-atif" },
-                { icon: Linkedin, label: "LINKEDIN", url: "https://www.linkedin.com/in/adeen-atif/" },
-                { icon: Instagram, label: "INSTAGRAM", url: "https://www.instagram.com/theadeenatif/" }
-              ].map((social, index) => (
-                <Button 
-                  key={index} 
-                  variant="outline" 
-                  className="border-2 border-black hover:bg-black hover:text-white p-2 md:p-3"
-                  onClick={() => handleSocialClick(social.url)}
+                <h3 className="font-mono text-[11px] tracking-widest uppercase text-white/50">
+                  Email
+                </h3>
+                <a
+                  href="mailto:adynatif@gmail.com"
+                  className="mt-1 block font-mono text-sm text-white hover:text-neon break-all"
                 >
-                  <social.icon className="h-4 w-4 md:h-5 md:w-5" />
-                </Button>
-              ))}
+                  adynatif@gmail.com
+                </a>
+              </div>
+            </div>
+
+            <a
+              href="https://cal.com/adeen-atif-pcnb4e/15min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nav-link inline-flex items-center gap-2 font-mono text-xs sm:text-sm tracking-widest text-white"
+            >
+              <Calendar className="w-4 h-4" />
+              &lt;Online Coffee Chat? Book a Slot/&gt;
+            </a>
+
+            {/* Social constellation */}
+            <div className="pt-6 flex flex-wrap items-center gap-5 sm:gap-8">
+              <SocialBubble
+                label="GitHub"
+                href="https://github.com/adeen-atif"
+                size="md"
+                icon={<Github className="w-5 h-5" strokeWidth={1.25} />}
+              />
+              <SocialBubble
+                label="LinkedIn"
+                href="https://www.linkedin.com/in/adeen-atif/"
+                size="lg"
+                className="sm:-translate-y-5"
+                icon={<Linkedin className="w-5 h-5" strokeWidth={1.25} />}
+              />
+              <SocialBubble
+                label="Instagram"
+                href="https://www.instagram.com/theadeenatif/"
+                size="sm"
+                className="sm:translate-y-4"
+                icon={<Instagram className="w-5 h-5" strokeWidth={1.25} />}
+              />
             </div>
           </div>
 
-          {/* Contact Form */}
-          <div className="bg-white border-2 border-black p-4 md:p-6">
+          {/* Form */}
+          <div className="relative border border-steel/60 p-6 sm:p-8">
+            <span className="absolute -top-2 left-6 bg-ink px-2 tag">
+              &lt;form&gt;
+            </span>
+
             <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <Input 
-                  name="name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  placeholder="Your Name" 
-                  className="border-2 border-black focus:ring-0 focus:border-black"
-                  required
-                />
-              </div>
-              <div>
-                <Input 
-                  type="email" 
-                  name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  placeholder="Your Email" 
-                  className="border-2 border-black focus:ring-0 focus:border-black"
-                  required
-                />
-              </div>
-              <div>
-                <Textarea 
-                  name="message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  placeholder="Your Message" 
-                  className="border-2 border-black focus:ring-0 focus:border-black min-h-24 md:min-h-32"
-                  required
-                />
-              </div>
-              <Button 
+              <input
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
+                placeholder="Your Name"
+                className={field}
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
+                placeholder="Your Email"
+                className={field}
+                required
+              />
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleInputChange}
+                placeholder="Your Message"
+                className={`${field} min-h-32 resize-y`}
+                required
+              />
+              <button
                 type="submit"
-                className="w-full bg-black text-white hover:bg-gray-800 font-bold"
+                className="fill-hover w-full border border-steel px-6 py-3 font-mono text-xs tracking-widest text-white"
               >
-                Send Message
-              </Button>
+                &lt;Send Message/&gt;
+              </button>
             </form>
           </div>
         </div>
