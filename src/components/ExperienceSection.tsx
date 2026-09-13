@@ -2,8 +2,23 @@ import React from 'react';
 import SectionHeading from '@/components/retro/SectionHeading';
 import Window from '@/components/retro/Window';
 
+interface Experience {
+  id: number;
+  company: string;
+  role: string;
+  duration: string;
+  /** Only where the posting was somewhere other than the usual base. */
+  location?: string;
+  description: string[];
+  tech: string[];
+  /** Falls back to `initials` when no logo asset exists. */
+  logo?: string;
+  initials?: string;
+  current?: boolean;
+}
+
 const ExperienceSection = () => {
-  const experiences = [
+  const experiences: Experience[] = [
     {
       id: 2,
       company: 'Ticketwala',
@@ -17,6 +32,18 @@ const ExperienceSection = () => {
       tech: ['Product Management', 'AI Strategy', 'Leadership'],
       logo: '/lovable-uploads/ticketwala-logo.png',
       current: true
+    },
+    {
+      id: 3,
+      company: 'MCIT CODE Incubator',
+      role: 'AI Strategy Mentor',
+      duration: 'Oct 2025 – Dec 2025',
+      location: 'Riyadh / Jeddah, KSA',
+      description: [
+        'Advised 40+ early-stage startups on applied AI, data strategy, system architecture, and build-vs-buy trade-offs, turning technical options into plain-language recommendations for founders'
+      ],
+      tech: ['AI Strategy', 'Data Strategy', 'System Architecture', 'Mentorship'],
+      initials: 'MC'
     },
     {
       id: 4,
@@ -90,12 +117,21 @@ const ExperienceSection = () => {
             >
               <div className="flex items-start gap-4">
                 <span className="shrink-0 w-12 h-12 sm:w-14 sm:h-14 border-2 border-black bg-white grid place-items-center overflow-hidden">
-                  <img
-                    src={exp.logo}
-                    alt={`${exp.company} logo`}
-                    loading="lazy"
-                    className="mono-img w-8 h-8 sm:w-9 sm:h-9 object-contain"
-                  />
+                  {exp.logo ? (
+                    <img
+                      src={exp.logo}
+                      alt={`${exp.company} logo`}
+                      loading="lazy"
+                      className="mono-img w-8 h-8 sm:w-9 sm:h-9 object-contain"
+                    />
+                  ) : (
+                    <span
+                      aria-hidden="true"
+                      className="display text-base sm:text-lg leading-none"
+                    >
+                      {exp.initials}
+                    </span>
+                  )}
                 </span>
 
                 <div className="min-w-0 flex-1">
@@ -113,7 +149,10 @@ const ExperienceSection = () => {
                   <p className="mt-1 font-semibold text-sm sm:text-base">
                     {exp.role}
                   </p>
-                  <p className="chrome mt-1">{exp.duration}</p>
+                  <p className="chrome mt-1">
+                    {exp.duration}
+                    {exp.location ? ` · ${exp.location}` : ''}
+                  </p>
 
                   <ul className="mt-3 space-y-1.5">
                     {exp.description.map((item, i) => (

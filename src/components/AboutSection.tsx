@@ -1,15 +1,16 @@
 import React from 'react';
 import SectionHeading from '@/components/retro/SectionHeading';
 import Window from '@/components/retro/Window';
+import WorldMap from '@/components/retro/WorldMap';
 
 const AboutSection = () => {
   const stats = [
-    { number: '1,000+', label: 'Students Taught' },
-    { number: '8+', label: 'Org Affiliations' },
-    { number: '25+', label: 'Events Led' },
     { number: '19', label: 'AI Projects Shipped' },
     { number: '98%', label: 'Avg Model Accuracy' },
-    { number: '2 yrs', label: 'AI Experience' }
+    { number: '4 yrs', label: 'AI & Product Experience' },
+    { number: '1,000+', label: 'Students Taught' },
+    { number: '50+', label: 'Org Affiliations' },
+    { number: '25+', label: 'Events Led' }
   ];
 
   return (
@@ -62,6 +63,14 @@ const AboutSection = () => {
               <div className="mt-1 chrome">{stat.label}</div>
             </div>
           ))}
+        </div>
+
+        <div className="mt-10">
+          <h3 className="display text-xl sm:text-2xl">Where the work has landed</h3>
+          <p className="chrome mt-1 mb-5">
+            50 projects across five countries
+          </p>
+          <WorldMap />
         </div>
       </div>
     </section>

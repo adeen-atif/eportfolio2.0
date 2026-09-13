@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronDown, ExternalLink } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import Window from '@/components/retro/Window';
 
 const HeroSection = () => {
@@ -18,43 +18,35 @@ const HeroSection = () => {
   const windowStates = [
     {
       filename: 'Adeen.png',
-      image: '/lovable-uploads/56516795-45b4-42d5-bd70-cd85a5054fd6.png',
-      url: 'https://www.adeenatif.com'
+      image: '/lovable-uploads/56516795-45b4-42d5-bd70-cd85a5054fd6.png'
     },
     {
       filename: 'AIEngineer.png',
-      image: '/lovable-uploads/9cab72cb-c1cb-46c8-a2c8-922335e42fdd.png',
-      url: 'https://www.adeenatif.com'
+      image: '/lovable-uploads/9cab72cb-c1cb-46c8-a2c8-922335e42fdd.png'
     },
     {
       filename: 'StartupFounder.png',
-      image: '/lovable-uploads/185e2400-c697-410a-99ad-5e76b5c71965.png',
-      url: 'https://thearcanumacademy.com'
+      image: '/lovable-uploads/185e2400-c697-410a-99ad-5e76b5c71965.png'
     },
     {
       filename: 'GoogleDSCLead.png',
-      image: '/lovable-uploads/a647577a-89cd-4b0b-b540-deb8be57fefb.png',
-      url: 'https://www.instagram.com/p/CyDnbIaoMA2/'
+      image: '/lovable-uploads/a647577a-89cd-4b0b-b540-deb8be57fefb.png'
     },
     {
       filename: 'BadmintonCaptain.png',
-      image: '/lovable-uploads/fe57845d-d390-4dff-b90f-63e7caeeb6d8.png',
-      url: 'https://www.facebook.com/IBASPACE/posts/pfbid032GspW4kAARWhxZJ4cvwaXc95Qu9Zy659fDWJgK4YdQoXRASYeD1snEZ8zEtkGB2al'
+      image: '/lovable-uploads/fe57845d-d390-4dff-b90f-63e7caeeb6d8.png'
     },
     {
       filename: 'MarathonRunner.png',
-      image: '/lovable-uploads/14dcadd0-e1ec-4ae0-98ea-3a0eb600efcb.png',
-      url: 'https://www.linkedin.com/posts/adeen-atif_ran-a-5k-at-the-exact-same-time-as-250000-activity-7351913658362294273--FjW?utm_source=share&utm_medium=member_desktop&rcm=ACoAADKh8mQBpH955rMTC_IlmL1WPoUihyDrQ08'
+      image: '/lovable-uploads/14dcadd0-e1ec-4ae0-98ea-3a0eb600efcb.png'
     },
     {
       filename: 'CatLover.png',
-      image: '/lovable-uploads/b32baa7e-3c31-4134-8765-90101b850a75.png',
-      url: 'https://www.adeenatif.com'
+      image: '/lovable-uploads/b32baa7e-3c31-4134-8765-90101b850a75.png'
     },
     {
       filename: 'Cyclist.png',
-      image: '/lovable-uploads/Cyclist.png',
-      url: 'https://www.adeenatif.com'
+      image: '/lovable-uploads/Cyclist.png'
     }
   ];
 
@@ -132,7 +124,7 @@ const HeroSection = () => {
                   {currentWindow + 1}/{windowStates.length}
                 </span>
 
-                <span className="flex gap-1">
+                <span className="flex gap-1 justify-center flex-1">
                   {windowStates.map((w, i) => (
                     <button
                       key={w.filename}
@@ -146,15 +138,7 @@ const HeroSection = () => {
                   ))}
                 </span>
 
-                <a
-                  href={current.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="chrome inline-flex items-center gap-1 link-ul px-1 shrink-0"
-                >
-                  open
-                  <ExternalLink className="w-3 h-3" />
-                </a>
+                <span className="w-6 shrink-0" aria-hidden="true" />
               </div>
             </Window>
           </div>
