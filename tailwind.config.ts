@@ -19,6 +19,16 @@ export default {
 		},
 		extend: {
 			colors: {
+				/* Design-system literals */
+				ink: '#12151D',
+				surface: '#171B25',
+				neon: {
+					DEFAULT: '#7D12FF',
+					soft: '#9B4DFF',
+					dim: 'rgba(125, 18, 255, 0.14)'
+				},
+				steel: '#4A4D57',
+
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -63,6 +73,14 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				}
 			},
+			fontFamily: {
+				mono: ['"Space Mono"', 'Monaco', 'Menlo', 'Ubuntu Mono', 'monospace'],
+				display: ['"Space Grotesk"', '"Space Mono"', 'monospace']
+			},
+			letterSpacing: {
+				wider: '0.08em',
+				widest: '0.18em'
+			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
@@ -70,27 +88,24 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' }
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' }
+				},
+				orbit: {
+					from: { transform: 'rotate(0deg)' },
+					to: { transform: 'rotate(360deg)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				orbit: 'orbit 6s linear infinite'
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 } satisfies Config;
