@@ -1,8 +1,13 @@
 
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import SiteNav from '@/components/retro/SiteNav';
+import SiteFooter from '@/components/retro/SiteFooter';
+import SectionHeading from '@/components/retro/SectionHeading';
+import Window from '@/components/retro/Window';
 
 interface BlogPost {
+  slug: string;
   id: number;
   title: string;
   date: string;
@@ -278,94 +283,68 @@ Would love to hear which pattern you're most excited to build with.`,
 
 const Blog = () => {
   const navigate = useNavigate();
-  return (
-    <div className="min-h-screen bg-gray-100 text-black font-mono">
-      {/* Navigation */}
-      <nav className="bg-white border-b-2 border-black p-3 md:p-4">
-        <div className="container mx-auto flex justify-center items-center">
-          <div className="flex flex-wrap justify-center space-x-2 md:space-x-8 gap-y-2">
-            <Link
-              to="/"
-              className="text-black hover:underline font-bold text-xs md:text-sm px-1 py-1"
-            >
-              Home
-            </Link>
-            <span className="text-black font-bold text-xs md:text-sm px-1 py-1 underline">
-              Blog
-            </span>
-          </div>
-        </div>
-      </nav>
 
-      {/* Header */}
-      <div className="bg-white border-b-2 border-black py-8 md:py-12">
-        <div className="container mx-auto px-4 md:px-6 text-center">
-          <h1 className="text-3xl md:text-4xl font-bold mb-2">Blog</h1>
-          <p className="text-sm md:text-base text-gray-600">
-            Thoughts, insights, and experiences from my journey
+  return (
+    <div className="min-h-screen bg-white text-black">
+      <SiteNav active="Blog" />
+
+      <section className="bg-white border-b-2 border-black">
+        <div className="mx-auto max-w-4xl px-5 sm:px-8 py-12 md:py-16">
+          <SectionHeading as="h1" size="lg" className="mb-4">
+            Blog
+          </SectionHeading>
+          <p className="text-base text-neutral-700">
+            Thoughts, insights, and experiences from my journey.
           </p>
         </div>
-      </div>
+      </section>
 
-      {/* Blog Posts */}
-      <div className="container mx-auto px-4 md:px-6 py-8 md:py-12">
-        <div className="max-w-3xl mx-auto space-y-8 md:space-y-12">
-          {blogPosts.map((post) => (
-            <article
+      <section className="halftone">
+        <div className="mx-auto max-w-4xl px-5 sm:px-8 py-12 md:py-16 space-y-8">
+          {blogPosts.map((post, index) => (
+            <Window
               key={post.id}
-              className="bg-white border-2 border-black p-6 md:p-8 transition-all duration-300 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-4px] hover:translate-y-[-4px] cursor-pointer group"
+              as="article"
+              filename={`${String(index + 1).padStart(2, '0')}-${post.slug}.pdf`}
+              shadow="lg"
+              interactive
+              className="cursor-pointer"
               onClick={() => navigate(`/blog/${post.slug}`)}
             >
-              <header className="mb-4">
-                <h2 className="text-xl md:text-2xl font-bold mb-2 group-hover:underline transition-all duration-200">
-                  {post.title}
-                </h2>
-                <div className="flex flex-wrap items-center gap-4 mb-4">
-                  <time className="text-sm text-gray-600 font-mono">
-                    {post.date}
-                  </time>
-                  {post.tags && (
-                    <div className="flex flex-wrap gap-2">
-                      {post.tags.map((tag, index) => (
-                        <span
-                          key={index}
-                          className="text-xs bg-gray-200 text-gray-700 px-2 py-1 border border-gray-300 font-mono"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              </header>
-              
-              <div className="prose prose-sm md:prose-base max-w-none">
-                <p className="text-sm md:text-base text-gray-700 mb-4">
-                  {post.excerpt}
-                </p>
-              </div>
-              
-              <footer className="mt-6 pt-4 border-t border-gray-200">
-                <div className="inline-flex items-center bg-black text-white px-4 py-2 border-2 border-black hover:bg-white hover:text-black transition-all duration-200 font-bold text-xs md:text-sm group-hover:translate-x-[2px] group-hover:translate-y-[2px]">
-                  Read more →
-                </div>
-              </footer>
-            </article>
-          ))}
-          
-          {/* Coming Soon Message */}
-          <div className="text-center py-8">
-            <p className="text-gray-600">More Interesting Stuff Coming Soon!</p>
-          </div>
-        </div>
-      </div>
+              <h2 className="display text-2xl sm:text-3xl leading-tight">
+                {post.title}
+              </h2>
 
-      {/* Footer */}
-      <footer className="bg-black text-white py-6 md:py-8 px-4 md:px-6">
-        <div className="container mx-auto text-center">
-          <p className="text-sm md:text-base">© 2024 Adeen Atif. All rights reserved.</p>
+              <p className="chrome mt-2">{post.date}</p>
+
+              {post.tags && (
+                <div className="mt-3 flex flex-wrap gap-1.5">
+                  {post.tags.map((tag, i) => (
+                    <span
+                      key={i}
+                      className="chrome border-2 border-black px-2 py-0.5"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
+
+              <p className="mt-4 text-sm sm:text-base leading-relaxed text-neutral-700">
+                {post.excerpt}
+              </p>
+
+              <span className="btn-retro mt-5 text-sm">Read more</span>
+            </Window>
+          ))}
+
+          <p className="chrome text-center py-6">
+            More interesting stuff coming soon
+          </p>
         </div>
-      </footer>
+      </section>
+
+      <SiteFooter />
     </div>
   );
 };

@@ -1,31 +1,16 @@
-
 import React, { useState } from 'react';
-import { Github, Linkedin, Instagram, Mail, Phone, MapPin, Calendar } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
+import { Github, Linkedin, Instagram, Mail, MapPin, Calendar } from 'lucide-react';
+import SectionHeading from '@/components/retro/SectionHeading';
+import Window from '@/components/retro/Window';
 
 const ContactSection = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
-  const handleScheduleMeeting = () => {
-    window.open('https://cal.com/adeen-atif-pcnb4e/15min', '_blank');
-  };
-
-  const handleSocialClick = (url: string) => {
-    window.open(url, '_blank');
-  };
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -33,115 +18,119 @@ const ContactSection = () => {
     const { name, email, message } = formData;
     const subject = `Message from ${name}`;
     const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
-    const mailtoLink = `mailto:adynatif@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailtoLink;
+    window.location.href = `mailto:adynatif@gmail.com?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
   };
 
+  const field =
+    'w-full bg-white border-2 border-black px-3 py-2.5 text-sm placeholder:text-neutral-500 focus:outline-none focus:shadow-hard';
+
+  const socials = [
+    { icon: Github, label: 'GitHub', url: 'https://github.com/adeen-atif' },
+    {
+      icon: Linkedin,
+      label: 'LinkedIn',
+      url: 'https://www.linkedin.com/in/adeen-atif/'
+    },
+    {
+      icon: Instagram,
+      label: 'Instagram',
+      url: 'https://www.instagram.com/theadeenatif/'
+    }
+  ];
+
   return (
-    <section id="find-me" className="py-12 md:py-20 px-4 md:px-6">
-      <div className="container mx-auto max-w-4xl">
-        <h2 className="text-3xl md:text-4xl font-black mb-8 md:mb-12 text-center">Let's Talk</h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-          {/* Contact Info */}
-          <div className="space-y-6">
-            <div className="flex items-center space-x-4">
-              <MapPin className="h-5 w-5 md:h-6 md:w-6 flex-shrink-0" />
-              <div>
-                <h3 className="font-black">LOCATION</h3>
-                <p className="text-sm md:text-base">Karachi, Pakistan</p>
-                <p className="text-sm md:text-base">Riyadh, Saudi Arabia</p>
-              </div>
-            </div>
+    <section id="find-me" className="bg-white">
+      <div className="mx-auto max-w-6xl px-5 sm:px-8 py-14 md:py-20">
+        <SectionHeading size="lg">Let&apos;s talk</SectionHeading>
 
-            <div className="flex items-center space-x-4">
-              <Mail className="h-5 w-5 md:h-6 md:w-6 flex-shrink-0" />
-              <div>
-                <h3 className="font-black">EMAIL</h3>
-                <p className="text-xs md:text-sm">adynatif@gmail.com</p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Details */}
+          <Window filename="contact-card.vcf" shadow="md">
+            <div className="space-y-6">
+              <div className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 mt-0.5 shrink-0" strokeWidth={2.5} />
+                <div>
+                  <h3 className="chrome">LOCATION</h3>
+                  <p className="mt-1 font-semibold text-sm">Karachi, Pakistan</p>
+                  <p className="font-semibold text-sm">Riyadh, Saudi Arabia</p>
+                </div>
               </div>
-            </div>
 
-{/*             <div className="flex items-center space-x-4">
-              <Phone className="h-5 w-5 md:h-6 md:w-6 flex-shrink-0" />
-              <div>
-                <h3 className="font-black">PHONE</h3>
-                <p className="text-sm md:text-base">(+92) 316 848 9996</p>
-                <p className="text-sm md:text-base">(+966) 54 184 4255</p>
+              <div className="flex items-start gap-3">
+                <Mail className="w-5 h-5 mt-0.5 shrink-0" strokeWidth={2.5} />
+                <div className="min-w-0">
+                  <h3 className="chrome">EMAIL</h3>
+                  <a
+                    href="mailto:adynatif@gmail.com"
+                    className="mt-1 block font-semibold text-sm link-ul break-all"
+                  >
+                    adynatif@gmail.com
+                  </a>
+                </div>
               </div>
-            </div> */}
 
-            {/* Schedule Meeting Button - Left Aligned */}
-            <div className="pt-4 flex justify-start">
-              <Button 
-                onClick={handleScheduleMeeting}
-                className="bg-black text-white hover:bg-gray-800 font-bold text-sm px-6 py-3 border-2 border-black hover:shadow-[4px_4px_0px_rgba(0,0,0,0.25)] hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-2"
+              <a
+                href="https://cal.com/adeen-atif-pcnb4e/15min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-retro text-sm"
               >
-                <Calendar className="h-4 w-4" />
-                Online Coffee Chat? Book a Slot!
-              </Button>
-            </div>
+                <Calendar className="w-4 h-4" strokeWidth={2.5} />
+                Online coffee chat? Book a slot
+              </a>
 
-            <div className="flex space-x-4 pt-4">
-              {[
-                { icon: Github, label: "GITHUB", url: "https://github.com/adeen-atif" },
-                { icon: Linkedin, label: "LINKEDIN", url: "https://www.linkedin.com/in/adeen-atif/" },
-                { icon: Instagram, label: "INSTAGRAM", url: "https://www.instagram.com/theadeenatif/" }
-              ].map((social, index) => (
-                <Button 
-                  key={index} 
-                  variant="outline" 
-                  className="border-2 border-black hover:bg-black hover:text-white p-2 md:p-3"
-                  onClick={() => handleSocialClick(social.url)}
-                >
-                  <social.icon className="h-4 w-4 md:h-5 md:w-5" />
-                </Button>
-              ))}
+              <div className="flex flex-wrap gap-3 pt-2">
+                {socials.map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.label}
+                    className="w-11 h-11 border-2 border-black bg-white hard grid place-items-center hover:bg-black hover:text-white transition-colors"
+                  >
+                    <social.icon className="w-5 h-5" strokeWidth={2.25} />
+                  </a>
+                ))}
+              </div>
             </div>
-          </div>
+          </Window>
 
-          {/* Contact Form */}
-          <div className="bg-white border-2 border-black p-4 md:p-6">
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <Input 
-                  name="name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  placeholder="Your Name" 
-                  className="border-2 border-black focus:ring-0 focus:border-black"
-                  required
-                />
-              </div>
-              <div>
-                <Input 
-                  type="email" 
-                  name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  placeholder="Your Email" 
-                  className="border-2 border-black focus:ring-0 focus:border-black"
-                  required
-                />
-              </div>
-              <div>
-                <Textarea 
-                  name="message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  placeholder="Your Message" 
-                  className="border-2 border-black focus:ring-0 focus:border-black min-h-24 md:min-h-32"
-                  required
-                />
-              </div>
-              <Button 
-                type="submit"
-                className="w-full bg-black text-white hover:bg-gray-800 font-bold"
-              >
-                Send Message
-              </Button>
+          {/* Form */}
+          <Window filename="new-message.txt" shadow="md">
+            <form onSubmit={handleSubmit} className="space-y-3">
+              <input
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
+                placeholder="Your name"
+                className={field}
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
+                placeholder="Your email"
+                className={field}
+                required
+              />
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleInputChange}
+                placeholder="Your message"
+                className={`${field} min-h-32 resize-y`}
+                required
+              />
+              <button type="submit" className="btn-retro btn-solid w-full justify-center">
+                Send message
+              </button>
             </form>
-          </div>
+          </Window>
         </div>
       </div>
     </section>

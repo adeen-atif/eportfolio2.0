@@ -19,6 +19,12 @@ export default {
 		},
 		extend: {
 			colors: {
+				/* Monochrome ramp. Nothing else is used anywhere. */
+				paper: '#FFFFFF',
+				band: '#F1F1F1',
+				'band-dark': '#E4E4E4',
+				rule: '#000000',
+
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -63,6 +69,19 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				}
 			},
+			fontFamily: {
+				sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+				display: ['Poppins', 'Inter', 'sans-serif'],
+				mono: ['"IBM Plex Mono"', 'Monaco', 'Menlo', 'monospace']
+			},
+			borderWidth: {
+				3: '3px'
+			},
+			boxShadow: {
+				hard: '4px 4px 0 #000',
+				'hard-lg': '6px 6px 0 #000',
+				'hard-xl': '8px 8px 0 #000'
+			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
@@ -70,20 +89,12 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' }
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' }
 				}
 			},
 			animation: {
@@ -92,5 +103,5 @@ export default {
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 } satisfies Config;
