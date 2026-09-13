@@ -377,7 +377,7 @@ const BlogPost = () => {
                       </div>
                     ) : (
                       <code
-                        className="bg-band border-2 border-black px-1.5 py-0.5 text-[13px] font-mono"
+                        className="bg-chrome border-2 border-black px-1.5 py-0.5 text-[13px] font-mono"
                         {...props}
                       >
                         {children}

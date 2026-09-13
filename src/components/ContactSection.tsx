@@ -79,7 +79,7 @@ const ContactSection = () => {
                 className={`${field} min-h-32 resize-y`}
                 required
               />
-              <button type="submit" className="btn-retro btn-solid w-full justify-center">
+              <button type="submit" className="btn-retro w-full justify-center">
                 Send message
               </button>
             </form>

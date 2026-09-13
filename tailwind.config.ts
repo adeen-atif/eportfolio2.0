@@ -19,10 +19,11 @@ export default {
 		},
 		extend: {
 			colors: {
-				/* Monochrome ramp. Nothing else is used anywhere. */
+				/* Monochrome ramp, sampled from the reference. */
 				paper: '#FFFFFF',
-				band: '#F1F1F1',
-				'band-dark': '#E4E4E4',
+				chrome: '#C4C4C4',
+				band: '#DFDFDF',
+				'band-dark': '#C4C4C4',
 				rule: '#000000',
 
 				border: 'hsl(var(--border))',

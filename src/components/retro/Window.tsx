@@ -49,7 +49,7 @@ const Window = ({
       style={style}
       onClick={onClick}
     >
-      <div className="flex items-center gap-2 border-b-2 border-black px-3 py-2 bg-band">
+      <div className="flex items-center gap-2 border-b-2 border-black px-3 py-2 bg-chrome">
         <span className="flex gap-1.5 shrink-0" aria-hidden="true">
           <span className="w-3 h-3 rounded-full border-2 border-black bg-white" />
           <span className="w-3 h-3 rounded-full border-2 border-black bg-white" />

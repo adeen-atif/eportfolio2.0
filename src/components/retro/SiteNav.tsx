@@ -51,7 +51,7 @@ const SiteNav = ({ items = HOME_NAV, active }: SiteNavProps) => {
     }`;
 
   return (
-    <header className="sticky top-0 z-50 bg-band border-b-2 border-black">
+    <header className="sticky top-0 z-50 bg-chrome border-b-2 border-black">
       <nav className="mx-auto max-w-6xl px-3 sm:px-5">
         <div className="flex items-center gap-2 sm:gap-4 py-2">
           <Link

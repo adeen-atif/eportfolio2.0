@@ -104,7 +104,7 @@ const HeroSection = () => {
               <button
                 type="button"
                 onClick={scrollToContact}
-                className="btn-retro btn-solid"
+                className="btn-retro"
               >
                 Get in touch
               </button>

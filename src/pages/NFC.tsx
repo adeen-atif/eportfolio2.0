@@ -91,7 +91,7 @@ const NFC = () => {
             type="button"
             onClick={handleSaveContact}
             aria-label="Save Adeen Atif's contact information"
-            className="btn-retro btn-solid w-full justify-center mt-6 text-sm"
+            className="btn-retro w-full justify-center mt-6 text-sm"
           >
             <Download className="h-4 w-4" strokeWidth={2.5} />
             Save contact
