@@ -9,6 +9,7 @@ import BlogPost from "./pages/BlogPost";
 import NFC from "./pages/NFC";
 import RealtimeAI from "./pages/RealtimeAI";
 import SpeakingPortfolio from "./pages/SpeakingPortfolio";
+import DesignPortfolio from "./pages/DesignPortfolio";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,8 @@ const App = () => (
           <Route path="/NFC" element={<NFC />} />
           <Route path="/rt-ai" element={<RealtimeAI />} />
           <Route path="/speakingportfolio" element={<SpeakingPortfolio />} />
+          {/* Shared by link, deliberately absent from the site nav */}
+          <Route path="/design" element={<DesignPortfolio />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
